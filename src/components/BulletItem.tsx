@@ -13,7 +13,7 @@ export default function BulletItem(props: BulletItemProps) {
             return (
                         <MBox whileHover={{scale: 1.05, y: -5}} width='auto'>
                                     <props.icon size={28} color='#EDF8FA'/>
-                                    <Text color='black.50' maxWidth={32} mt='4' fontSize='16' color='white.500'>{props.text}</Text>
+                                    <Text maxWidth={32} mt='4' fontSize='16' color='white.500'>{props.text}</Text>
                         </MBox>
             )
 }

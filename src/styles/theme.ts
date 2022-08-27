@@ -1,4 +1,4 @@
-import { extendTheme, withDefaultVariant } from '@chakra-ui/react';
+import { extendTheme } from '@chakra-ui/react';
 
 const colors = {
             orange: {
@@ -23,7 +23,7 @@ const colors = {
                         600: '#E8F4F6',
                         700: '#E4EFF1',
                         800: '#DFEBED',
-                        900: '#DBE6E8',
+                        900: '#DFDFDF',
             },
             black: {
                         50: '#908987',

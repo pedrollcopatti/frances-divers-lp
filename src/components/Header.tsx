@@ -8,7 +8,7 @@ export default function Header() {
             return (
                         <Stack mt='24' w='90%' h='40vh' justify='center' direction='row' align='center'>
                                     <Stack w='60%' justify='center' spacing='8' >
-                                                <MBadge fontSize='1rem' colorScheme='orange' variant='outline' maxWidth='95px'>NOVIDADE</MBadge>
+                                                <MBadge animate={{scale: [1, 1.1, 1]}} transition={{ repeat: Infinity, duration: 1 }} fontSize='1rem' colorScheme='orange' variant='outline' maxWidth='95px'>NOVIDADE</MBadge>
                                                 <Heading color='black.500' size='2xl'>Aprenda francês em 3 meses com professor nativo!</Heading>
                                                 <Text color='black.50'>Professor nativo se junta a doutora em francês para dar curso iniciante da língua francesa com turmas EXCLUSIVAS.</Text>
                                                 <Stack direction='row' spacing='8'>
@@ -18,7 +18,7 @@ export default function Header() {
                                                 <Text fontSize='12' color='orange.500'>Últimas vagas para nossas turmas de francês.</Text>
 
                                     </Stack>
-                                    <Image width='750px' src={illustration} />
+                                    <Image alt='illustration' width='750px' src={illustration} />
                         </Stack>
             )
 }

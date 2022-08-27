@@ -1,10 +1,19 @@
-import { Box, Button, Divider, Flex, Heading, Link, Stack, Stat, StatHelpText, StatLabel, StatNumber, Text } from '@chakra-ui/react'
+import { Badge, Box, Button, Center, Divider, Flex, Heading, Highlight, IconButton, Link, Stack, Stat, StatHelpText, StatLabel, StatNumber, Text } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Bullets from '../components/Bullets'
 import Header from '../components/Header'
 import Nav from '../components/Nav'
+import whiteLogo from '../assets/logo_branco.svg'
+import Image from 'next/image'
+import { FaFacebook, FaInstagram, FaLinkedin, FaMailBulk, FaWhatsapp } from 'react-icons/fa'
+
 const Home: NextPage = () => {
+
+  const MButton = motion(Button);
+  const MStack = motion(Stack);
+
   return (
     <>
       <Head>
@@ -20,64 +29,118 @@ const Home: NextPage = () => {
         <Nav />
         <Header />
         <Bullets />
-        <Stack align='center' justify='center' mt='20' spacing='16'>
-          <Heading size='xl' width='75%' textAlign='center'>Uma doutora e um professor de língua nativa!</Heading>
-          <Stack direction='row' spacing='24'>
-            <Flex bg='white.900' width='250px' height='400px' justify='center' align='center'>
-              imagem professores
-            </Flex>
-            <Flex bg='white.900' width='250px' height='400px' justify='center' align='center'>
-              imagem professores
-            </Flex>
+        <Stack width='100%' id='bgImage' mt='32' align='center' spacing='32' height='90vh'>
+          <Stack align='center' justify='center' spacing='16'>
+            <Heading size='xl' width='75%' textAlign='center'>Uma doutora e um professor de língua nativa!</Heading>
+            <Stack direction='row' spacing='24'>
+              <Stack align='center'>
+                <Flex id='sandra' width='15rem' border='2px solid #D87353' height='20rem' justify='center' align='center' overflow='hidden' borderRadius='full' shadow='2xl' />
+                <Badge colorScheme='orange' variant='solid' fontSize='16'>Sandra Coeli</Badge>
+                <Text fontSize='12'>Doutora em língua francesa</Text>
+              </Stack>
+              <Stack align='center'>
+                <Flex id='kwami' width='15rem' border='2px solid #D87353' height='20rem' justify='center' align='center' overflow='hidden' borderRadius='full' shadow='2xl' />
+                <Badge colorScheme='orange' variant='solid' fontSize='16'>Kwami Fleury</Badge>
+                <Text fontSize='12'>Professor nativo</Text>
+              </Stack>
+            </Stack>
+            <Stack align='center' spacing='4'>
+              <Text fontSize='18' textAlign='center'>
+                <Highlight
+                  query='Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ipsum harum explicabo'
+                  styles={{ px: '2', py: '1', rounded: 'full', bg: 'orange.500', color: 'white.50' }}
+                >
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ipsum harum explicabo
+                </Highlight>
+              </Text>
+              <Text color='black.50' fontSize='18' textAlign='center'>
+                <Highlight
+                  query='nam excepturi, blanditiis doloribus quas recusandae debitis veniam ratione nesciunt culpa'
+                  styles={{ px: '2', py: '1', rounded: 'full', bg: 'orange.500', color: 'white.50' }}
+                >
+                  nam excepturi, blanditiis doloribus quas recusandae debitis veniam ratione nesciunt culpa
+                </Highlight>
+              </Text>
+              <Text color='black.50' fontSize='18' fontWeight='bold' textAlign='center'>
+                <Highlight
+                  query='aperiam odio sequi. Adipisci, eum? Distinctio!'
+                  styles={{ px: '2', py: '1', rounded: 'full', bg: 'blue.500', color: 'white.50' }}
+                >
+                  aperiam odio sequi. Adipisci, eum? Distinctio!
+                </Highlight>
+              </Text>
+            </Stack>
           </Stack>
-          <Text color='black.50' fontSize='16' width='60%' textAlign='center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis <strong> ipsum harum explicabo nam excepturi  </strong>, blanditiis doloribus quas recusandae debitis veniam ratione nesciunt culpa aperiam odio sequi. Adipisci, eum? Distinctio!</Text>
         </Stack>
-        <Stack spacing='6' mt='32' align='center'>
+
+        <Stack id='planos' align='center' spacing='6'>
           <Heading textAlign='center' width='60%'>Até quando você irá postergar o início dos seus estudos em francês?
           </Heading>
-          <Text fontSize='14' color='orange.50'>Restam poucas vagas para nosso curso INICIANTE de francês.
+          <Text size='14' color='orange.50'>Restam poucas vagas para nosso curso INICIANTE de francês.
           </Text>
         </Stack>
         <Stack mt='20' direction='row' spacing='24' align='center'>
 
-          <Stack p='8' width='20rem' border='2px solid #D87353' borderRadius='xl' spacing='8' justify='center' shadow='2xl' align='center'>
+          <Stack p='8' width='20rem' border='2px solid #D87353' borderRadius='xl' spacing='8' justify='center' align='center'>
             <Heading size='md' color='black.500'>Plano Padrão</Heading>
             <Text color='black.500' fontSize='12' textAlign='center'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, in.</Text>
             <Divider w='100%' />
             <Stack direction='row' align='flex-end'>
-              <Heading fontSize='2xl'>R$ 25,99</Heading>
+              <Heading color='black.100' fontSize='2xl'>R$ 170,00</Heading>
               <Text color='black.50' fontSize='12'>/ por mês</Text>
             </Stack>
-            <Button w='100%' background='transparent' color='orange.500' border='1px solid #D87353' _hover={{ backgroundColor: 'orange.500', color: 'white.500' }}>Quero agora!</Button>
+            <Link width='100%' textDecor='none' isExternal href={'https://pay.hotmart.com/C73933231F'}><Button onClick={() => { }} w='100%' background='transparent' color='orange.500' border='1px solid #D87353' _hover={{ backgroundColor: 'orange.500', color: 'white.500' }}>Quero agora!</Button></Link>
             <Stack align='center' spacing='2'>
-              <Text color='black.50'>Firts Availiable</Text>
-              <Text color='black.50' fontWeight='bold'>Trainer</Text>
+              <Text color='black.50'>Aula com professor nativo</Text>
               <Text color='black.50'>Bullet point</Text>
             </Stack>
             <Divider w='100%' />
             <Link fontSize='12' color='orange.50' fontWeight='normal'>Entrar em contato</Link>
           </Stack>
 
-          <Stack p='8' width='22rem' backgroundColor='blue.500' borderRadius='xl' spacing='8' justify='center' shadow='2xl' align='center'>
+          <MStack animate={{ scale: [1, 1.01, 1], backgroundColor: ['#D87353', '#4EB7CD', '#D87353'] }} transition={{ repeat: Infinity, duration: 4, ease: 'anticipate' }} p='8' width='22rem' backgroundColor='blue.500' borderRadius='xl' spacing='8' justify='center' shadow='2xl' align='center'>
             <Heading size='xl' color='white.500'>Plano Premium</Heading>
             <Text color='white.500' fontSize='12' textAlign='center'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, in.</Text>
             <Divider w='100%' />
-            <Stack direction='row' align='flex-end'>
-              <Heading fontSize='4xl'>R$ 47,99</Heading>
-              <Text color='white.50' fontSize='12'>/ por mês</Text>
+            <Stack>
+              <Heading opacity={0.5} fontSize='sm' color='white.900' textDecoration='line-through'>R$ 496,62</Heading>
+              <Stack direction='row' align='flex-end'>
+                <Heading fontSize='4xl'>R$ 82,77</Heading>
+                <Text color='white.50' fontSize='12'>/ por mês</Text>
+              </Stack>
             </Stack>
-            <Button w='100%' variant='solid' _hover={{ backgroundColor: 'orange.500', color: 'white.500' }}>Quero agora!</Button>
+            <Link width='100%' textDecor='none' isExternal href={'https://pay.hotmart.com/V73934874Y?bid=1661572707879'}><MButton w='100%' variant='solid' shadow='lg' whileHover={{ backgroundColor: '#D87353', color: '#EDF8FA', scale: 1.1 }} transition={{ duration: 0.1 }}>Quero agora!</MButton></Link>
             <Stack align='center' spacing='2'>
-              <Text color='white.50'>Firts Availiable</Text>
-              <Text color='white.50' fontWeight='bold'>Trainer</Text>
-              <Text color='white.50'>Bullet point</Text>
+              <Text color='white.50'>Atenção individualizada</Text>
+              <Text textAlign='center' color='white.50' fontWeight='bold'>E-book disponível na hora da compra!</Text>
+              <Text color='white.50'>Aula com professor nativo</Text>
             </Stack>
             <Divider w='100%' />
             <Link fontSize='12' color='white.50' fontWeight='normal'>Entrar em contato</Link>
-          </Stack>
+          </MStack>
         </Stack>
-        <Flex mt='32' backgroundColor='orange.500' w='100%' h='50vh'></Flex>
-      </Flex>
+        <Stack id='footer' spacing='4' p='12' mt='24' align='center'>
+          <Heading >Ainda com dúvidas?</Heading>
+          <Text fontSize='14'>Entre em contato com o número: <strong>(11) 93352-4845</strong></Text>
+          <Button colorScheme='whatsapp'><FaWhatsapp /><Text ml='2'>Conversar no WhatsApp</Text></Button>
+        </Stack>
+        <Center flexDirection='column' mt='32' backgroundColor='orange.500' w='100%' h='50vh'>
+          <Stack spacing='16'>
+            <Image alt='logo' width={150} height={150} src={whiteLogo} />
+
+            <Stack
+              direction='row'
+              spacing='4'
+            >
+              <Link href='' isExternal><IconButton aria-label='facebook' colorScheme='none' icon={<FaFacebook />} /></Link>
+              <Link href='' isExternal><IconButton aria-label='linkedin' colorScheme='none' icon={<FaLinkedin />} /></Link>
+              <Link href='' isExternal><IconButton aria-label='instagram' colorScheme='none' icon={<FaInstagram />} /></Link>
+              <Link href='' isExternal><IconButton aria-label='linkedin' colorScheme='none' icon={<FaWhatsapp />} /></Link>
+              <Link href='' isExternal><IconButton aria-label='email' colorScheme='none' icon={<FaMailBulk />} /></Link>
+            </Stack>
+          </Stack>
+        </Center>
+      </Flex >
     </>
 
   )
