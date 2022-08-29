@@ -1,4 +1,4 @@
-import { Avatar, Box, Flex, Text } from "@chakra-ui/react";
+import { Stack, Text, useMediaQuery } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { IconType } from "react-icons";
 
@@ -7,13 +7,14 @@ type BulletItemProps = {
             icon: IconType
 }
 export default function BulletItem(props: BulletItemProps) {
-            
-            const MBox = motion(Box);
+
+            const MStack = motion(Stack);
+            const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
 
             return (
-                        <MBox whileHover={{scale: 1.05, y: -5}} width='auto'>
-                                    <props.icon size={28} color='#EDF8FA'/>
+                        <MStack m='4' whileHover={{ scale: 1.05, y: -5 }} width='auto' textAlign='center' align='center' justify='center'>
+                                    <props.icon size={28} color='#EDF8FA' />
                                     <Text maxWidth={32} mt='4' fontSize='16' color='white.500'>{props.text}</Text>
-                        </MBox>
+                        </MStack>
             )
 }
