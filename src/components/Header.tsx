@@ -20,11 +20,16 @@ export default function Header() {
       mt="24"
       w="90%"
       h="40vh"
-      justify="center" 
+      justify="center"
       direction={isLargerThan1200 ? "row" : "column"}
       align="center"
     >
-      <Stack w={isLargerThan1200 ? "60%" : "100%"}  justify="center"  align={isLargerThan1200 ? "initial" : "center"} spacing="8">
+      <Stack
+        w={isLargerThan1200 ? "60%" : "100%"}
+        justify="center"
+        align={isLargerThan1200 ? "initial" : "center"}
+        spacing="8"
+      >
         <MBadge
           animate={{ scale: [1, 1.1, 1] }}
           transition={{ repeat: Infinity, duration: 1 }}
@@ -35,11 +40,19 @@ export default function Header() {
         >
           NOVIDADE
         </MBadge>
-        <Heading textAlign={isLargerThan1200 ? 'initial' : 'center'} color="black.500" size="2xl">
-          Aprenda francês em 3 meses com professor nativo!
+        <Heading
+          textAlign={isLargerThan1200 ? "initial" : "center"}
+          color="black.500"
+          size="2xl"
+        >
+          Aprenda francês em 3 meses com nosso curso iniciante!
         </Heading>
-        <Text fontSize='lg' color="black.50" textAlign={isLargerThan1200 ? 'initial' : 'center'}>
-        Turmas com vagas LIMITADAS abertas.
+        <Text
+          fontSize="lg"
+          color="black.50"
+          textAlign={isLargerThan1200 ? "initial" : "center"}
+        >
+          Turmas com vagas LIMITADAS abertas.
         </Text>
         <Stack direction="row" spacing="4">
           <Link to="planos" smooth offset={-24}>
@@ -49,7 +62,7 @@ export default function Header() {
               background="orange.500"
               color="white"
               _hover={{ backgroundColor: "orange.900" }}
-              size={isLargerThan1200 ? 'md' : 'lg'}
+              size={isLargerThan1200 ? "md" : "lg"}
             >
               Quero começar
             </Button>
@@ -61,7 +74,11 @@ export default function Header() {
           </Link>
         </Stack>
       </Stack>
-      {isLargerThan1200 ? <Image alt="illustration" width="750px" src={illustration} /> : <></>}
+      {isLargerThan1200 ? (
+        <Image alt="illustration" width="750px" src={illustration} />
+      ) : (
+        <></>
+      )}
     </Stack>
   );
 }

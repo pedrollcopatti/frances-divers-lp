@@ -20,7 +20,7 @@ import Header from "../components/Header";
 import Nav from "../components/Nav";
 import whiteLogo from "../assets/logo_branco.svg";
 import Image from "next/image";
-import book from '../assets/book.png'
+import book from "../assets/book.png";
 import {
   FaFacebook,
   FaInstagram,
@@ -55,10 +55,19 @@ const Home: NextPage = () => {
         <Stack id="bgImage" width="100%" mt="32" align="center" spacing="20">
           <Stack align="center" justify="center" spacing="16">
             <Heading size="xl" width="75%" textAlign="center">
-              Conheça dos professores do curso
+              Conheça os professores do curso
             </Heading>
-            <Stack direction={isLargerThan800 ? "row" : 'column'} justify='center' spacing={isLargerThan800 ? 0 : 12} align={isLargerThan800 ? 'initial' : 'center'}>
-              <Stack align="center" w={isLargerThan800 ? '35%' : '75%'} spacing='4'>
+            <Stack
+              direction={isLargerThan800 ? "row" : "column"}
+              justify="center"
+              spacing={isLargerThan800 ? 0 : 12}
+              align={isLargerThan800 ? "initial" : "center"}
+            >
+              <Stack
+                align="center"
+                w={isLargerThan800 ? "35%" : "75%"}
+                spacing="4"
+              >
                 <Flex
                   id="sandra"
                   width="15rem"
@@ -73,13 +82,27 @@ const Home: NextPage = () => {
                 <Badge colorScheme="orange" variant="solid" fontSize="16">
                   Kwami Fleury
                 </Badge>
-                <Stack align='center' w={isLargerThan800 ? '65%' : '100%'}><Text fontSize='sm' textAlign='center'>Longa experiência de prática de ensino e pesquisa na aprendizagem da língua francesa.
-                </Text>
-                  <Text fontWeight='bold' fontSize='md' textAlign='center'>Mestra e doutora em didática do ensino de francês pela USP (Universidade de São Paulo).</Text>
-                  <Text fontSize='sm' textAlign='center'>Enfoque da prática de ensino na comunicação para o trabalho, o estudo, viagens e todos as experiências que o francês pode proporcionar para todes.</Text>
+                <Stack align="center" w={isLargerThan800 ? "65%" : "100%"}>
+                  <Text fontSize="sm" textAlign="center">
+                    Longa experiência de prática de ensino e pesquisa na
+                    aprendizagem da língua francesa.
+                  </Text>
+                  <Text fontWeight="bold" fontSize="md" textAlign="center">
+                    Mestra e doutora em didática do ensino de francês pela USP
+                    (Universidade de São Paulo).
+                  </Text>
+                  <Text fontSize="sm" textAlign="center">
+                    Enfoque da prática de ensino na comunicação para o trabalho,
+                    o estudo, viagens e todos as experiências que o francês pode
+                    proporcionar para todes.
+                  </Text>
                 </Stack>
               </Stack>
-              <Stack align="center" w={isLargerThan800 ? '35%' : '75%'} spacing='4'>
+              <Stack
+                align="center"
+                w={isLargerThan800 ? "35%" : "75%"}
+                spacing="4"
+              >
                 <Flex
                   id="kwami"
                   width="15rem"
@@ -94,17 +117,35 @@ const Home: NextPage = () => {
                 <Badge colorScheme="orange" variant="solid" fontSize="16">
                   Kwami Fleury
                 </Badge>
-                <Stack align='center' w={isLargerThan800 ? '65%' : '100%'}>
-                  <Text fontWeight='bold' fontSize='md' textAlign='center'>É NATIVO da língua e professor há + de 10 anos;</Text>
-                  <Text fontSize='sm' textAlign='center'>Diploma em estudos literários na língua francesa;</Text>
-                  <Text fontSize='sm' textAlign='center'>Também leciona na escola de idiomas HBLS em Bruxelas (Bélgica);</Text>
-                  <Text fontSize='sm' textAlign='center'>Mestrando na ULB (Universidade Livre de Bruxelas).</Text>
+                <Stack align="center" w={isLargerThan800 ? "65%" : "100%"}>
+                  <Text fontWeight="bold" fontSize="md" textAlign="center">
+                    É NATIVO da língua e professor há + de 10 anos;
+                  </Text>
+                  <Text fontSize="sm" textAlign="center">
+                    Diploma em estudos literários na língua francesa;
+                  </Text>
+                  <Text fontSize="sm" textAlign="center">
+                    Também leciona na escola de idiomas HBLS em Bruxelas
+                    (Bélgica);
+                  </Text>
+                  <Text fontSize="sm" textAlign="center">
+                    Mestrando na ULB (Universidade Livre de Bruxelas).
+                  </Text>
                 </Stack>
               </Stack>
             </Stack>
-            <Stack id='sobre' align="center" spacing="16" width={isLargerThan800 ? "60%" : '90%'}>
-              <Stack mt='8' align="center" width="100%" spacing="4">
-                <Heading size="xl" width={isLargerThan1200 ? "75%" : '100%'} textAlign="center">
+            <Stack
+              id="sobre"
+              align="center"
+              spacing="16"
+              width={isLargerThan800 ? "60%" : "90%"}
+            >
+              <Stack mt="8" align="center" width="100%" spacing="4">
+                <Heading
+                  size="xl"
+                  width={isLargerThan1200 ? "75%" : "100%"}
+                  textAlign="center"
+                >
                   Como vou aprender com o
                 </Heading>
                 <Heading size="2xl" color="orange.500" textAlign="center">
@@ -135,7 +176,12 @@ const Home: NextPage = () => {
                 cultural. Criando uma relação com o francês que você vai levar
                 para vida toda.
               </Text>
-              <Heading size="lg" color="blue.500" textAlign='center' width='80%'>
+              <Heading
+                size="lg"
+                color="blue.500"
+                textAlign="center"
+                width="80%"
+              >
                 Não estamos aqui pra te oferecer uma fórmula mágica!
               </Heading>
               <Text color="black.900" fontSize="18" textAlign="center">
@@ -145,23 +191,34 @@ const Home: NextPage = () => {
                 capacidades aprendendo a língua, e nós te guiamos nesse caminho.
               </Text>
             </Stack>
-            <Stack width={isLargerThan800 ? "60%" : '90%'} align='center'>
-              <Heading size="xl" color="orange.500" textAlign='center' width={isLargerThan800 ? "80%" : '100%'}>
+            <Stack width={isLargerThan800 ? "60%" : "90%"} align="center">
+              <Heading
+                size="xl"
+                color="orange.500"
+                textAlign="center"
+                width={isLargerThan800 ? "80%" : "100%"}
+              >
                 Inscreva-se hoje mesmo:
               </Heading>
               <Text color="black.900" fontSize="18" textAlign="center">
-                e receba nosso e-book de forma gratuita com <strong>dicas para começar a aprender francês!</strong>
+                e receba nosso e-book de forma gratuita com{" "}
+                <strong>dicas para começar a aprender francês!</strong>
               </Text>
-              <Image src={book} />
+              <Image alt="book" src={book} />
             </Stack>
           </Stack>
           <Stack id="planos" align="center" spacing="6">
-            <Heading textAlign="center" width={isLargerThan800 ? "60%" : '90%'}>
+            <Heading textAlign="center" width={isLargerThan800 ? "60%" : "90%"}>
               Até quando você irá postergar o início dos seus estudos em
               francês?
             </Heading>
           </Stack>
-          <Stack mt="20" direction={isLargerThan800 ? "row" : 'column'} spacing="24" align="center">
+          <Stack
+            mt="20"
+            direction={isLargerThan800 ? "row" : "column"}
+            spacing="24"
+            align="center"
+          >
             <Stack
               p="8"
               width="20rem"
@@ -271,8 +328,13 @@ const Home: NextPage = () => {
                 </MButton>
               </Link>
               <Stack align="center" spacing="4">
-               <Flex align='center'> <ImPriceTag  color='#EDF8FA' />
-                <Text ml='4' color="white.50" fontWeight="bold">Valor Promocional</Text></Flex>
+                <Flex align="center">
+                  {" "}
+                  <ImPriceTag color="#EDF8FA" />
+                  <Text ml="4" color="white.50" fontWeight="bold">
+                    Valor Promocional
+                  </Text>
+                </Flex>
                 <Text color="white.50">Atenção individualizada</Text>
                 <Text textAlign="center" color="white.50" fontWeight="bold">
                   E-book disponível na hora da compra!
@@ -293,12 +355,17 @@ const Home: NextPage = () => {
           </Stack>
         </Stack>
 
-        <Stack textAlign='center' id="footer" spacing="4" p="12" mt="24" align="center">
+        <Stack
+          textAlign="center"
+          id="footer"
+          spacing="4"
+          p="12"
+          mt="24"
+          align="center"
+        >
           <Heading>Ainda com dúvidas?</Heading>
-          <Text fontSize="14">
-            Entre em contato com o número:
-          </Text>
-          <Text fontWeight='bold'>
+          <Text fontSize="14">Entre em contato com o número:</Text>
+          <Text fontWeight="bold">
             <strong>(11) 93352-4845</strong>
           </Text>
           <Button

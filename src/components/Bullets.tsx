@@ -19,23 +19,26 @@ export default function Bullets() {
       borderRadius="32"
       mt="32"
       w="90%"
-      minW='70%'
+      minW="70%"
       direction={isLargerThan1200 ? "row" : "column"}
       spacing={isLargerThan1200 ? "4" : 8}
     >
-      <Stack direction="row" align="center" justify={isLargerThan1200 ? "initial" : "center"} spacing="12">
+      <Stack
+        direction="row"
+        align="center"
+        justify={isLargerThan1200 ? "initial" : "center"}
+        spacing="12"
+      >
         <MFlex
           animate={{ rotate: [0, -15, 15, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
         >
           <FaCalendarAlt size={56} color="#4EB7CD" />
         </MFlex>
-        <Stack w='10rem'>
-          <Heading size="md">
-            Início das aulas:
-          </Heading>
-          <Heading size="lg" color='orange.500'>
-            01/09
+        <Stack w="10rem">
+          <Heading size="md">Início das aulas:</Heading>
+          <Heading size="lg" color="orange.500">
+            XX/XX
           </Heading>
         </Stack>
         {isLargerThan1200 ? <Divider orientation="vertical" h="12" /> : <></>}
@@ -44,36 +47,36 @@ export default function Bullets() {
         backgroundColor="orange.500"
         p="12"
         borderRadius="32"
-        justify='space-between'
+        justify="space-between"
         direction="row"
         align={isLargerThan800 ? "baseline" : "center"}
         width="100%"
       >
-         {isLargerThan800 ? 
-        <>
-          <BulletItem
-          icon={FaChalkboardTeacher}
-          text="Professores doutores"
-        />
-        <BulletItem icon={FaUsers} text="Turmas de no máx. 5 pessoas" />
-        <BulletItem icon={HiSupport} text="Atenção individualizada" />
-        <BulletItem icon={ImPriceTag} text="Valor Promocional" />
-        </>
-      :
-      <>
-        <Stack>
-        <BulletItem
-          icon={FaChalkboardTeacher}
-          text="Professores doutores"
-        />
-        <BulletItem icon={FaUsers} text="Turmas de no máx. 5 pessoas" />
-        </Stack>
-       <Stack>
-       <BulletItem icon={HiSupport} text="Atenção individualizada" />
-        <BulletItem icon={ImPriceTag} text="Valor Promocional" />
-       </Stack>
-      </>
-      }
+        {isLargerThan800 ? (
+          <>
+            <BulletItem
+              icon={FaChalkboardTeacher}
+              text="Professores doutores"
+            />
+            <BulletItem icon={FaUsers} text="Turmas de no máx. 5 pessoas" />
+            <BulletItem icon={HiSupport} text="Atenção individualizada" />
+            <BulletItem icon={ImPriceTag} text="Valor Promocional" />
+          </>
+        ) : (
+          <>
+            <Stack>
+              <BulletItem
+                icon={FaChalkboardTeacher}
+                text="Professores doutores"
+              />
+              <BulletItem icon={FaUsers} text="Turmas de no máx. 5 pessoas" />
+            </Stack>
+            <Stack>
+              <BulletItem icon={HiSupport} text="Atenção individualizada" />
+              <BulletItem icon={ImPriceTag} text="Valor Promocional" />
+            </Stack>
+          </>
+        )}
       </Flex>
     </Stack>
   );
