@@ -33,7 +33,7 @@ export default function Bullets() {
           animate={{ rotate: [0, -15, 15, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
         >
-          <FaCalendarAlt size={56} color="#4EB7CD" />
+          <FaCalendarAlt size={56} color="#1B75B1" />
         </MFlex>
         <Stack w="10rem">
           <Heading size="md">Início das aulas:</Heading>

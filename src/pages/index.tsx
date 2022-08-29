@@ -71,7 +71,7 @@ const Home: NextPage = () => {
                 <Flex
                   id="sandra"
                   width="15rem"
-                  border="2px solid #D87353"
+                  border="2px solid #EF7C11"
                   height="20rem"
                   justify="center"
                   align="center"
@@ -80,7 +80,7 @@ const Home: NextPage = () => {
                   shadow="2xl"
                 />
                 <Badge colorScheme="orange" variant="solid" fontSize="16">
-                  Kwami Fleury
+                  Sandra Coeli
                 </Badge>
                 <Stack align="center" w={isLargerThan800 ? "65%" : "100%"}>
                   <Text fontSize="sm" textAlign="center">
@@ -106,7 +106,7 @@ const Home: NextPage = () => {
                 <Flex
                   id="kwami"
                   width="15rem"
-                  border="2px solid #D87353"
+                  border="2px solid #EF7C11"
                   height="20rem"
                   justify="center"
                   align="center"
@@ -222,7 +222,7 @@ const Home: NextPage = () => {
             <Stack
               p="8"
               width="20rem"
-              border="2px solid #D87353"
+              border="2px solid #EF7C11"
               borderRadius="xl"
               spacing="8"
               justify="center"
@@ -250,7 +250,7 @@ const Home: NextPage = () => {
                   w="100%"
                   background="transparent"
                   color="orange.500"
-                  border="1px solid #D87353"
+                  border="1px solid #EF7C11"
                   _hover={{ backgroundColor: "orange.500", color: "white.500" }}
                 >
                   Quero agora!
@@ -275,7 +275,7 @@ const Home: NextPage = () => {
             <MStack
               animate={{
                 scale: [1, 1.01, 1],
-                backgroundColor: ["#D87353", "#4EB7CD", "#D87353"],
+                backgroundColor: ["#EF7C11", "#1B75B1", "#EF7C11"],
               }}
               transition={{ repeat: Infinity, duration: 4, ease: "anticipate" }}
               p="8"
@@ -318,7 +318,7 @@ const Home: NextPage = () => {
                   variant="solid"
                   shadow="lg"
                   whileHover={{
-                    backgroundColor: "#D87353",
+                    backgroundColor: "#EF7C11",
                     color: "#EDF8FA",
                     scale: 1.1,
                   }}
