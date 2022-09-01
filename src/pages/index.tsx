@@ -30,6 +30,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { ImPriceTag } from "react-icons/im";
+import { SimpleGrid } from "@chakra-ui/react";
 
 const Home: NextPage = () => {
   const MButton = motion(Button);
@@ -93,7 +94,7 @@ const Home: NextPage = () => {
                   </Text>
                   <Text fontSize="sm" textAlign="center">
                     Enfoque da prática de ensino na comunicação para o trabalho,
-                    o estudo, viagens e todos as experiências que o francês pode
+                    o estudo, viagens e todas as experiências que o francês pode
                     proporcionar para todes.
                   </Text>
                 </Stack>
@@ -355,12 +356,43 @@ const Home: NextPage = () => {
           </Stack>
         </Stack>
 
+        <Stack textAlign='center' id="footer" spacing="12" p="12" mt="24" align="center" >
+          <Heading>Horário dos cursos</Heading>
+          <SimpleGrid columns={3} spacing={16}>
+            <Stack align='left'>
+              <Heading textAlign='left' size='lg' color='orange.500'>Turma 1:</Heading>
+              <Text>Segunda 10h-11h30</Text>
+            </Stack>
+            <Stack align='left'>
+              <Heading textAlign='left' size='lg' color='orange.500'>Turma 2:</Heading>
+              <Text>Segunda 19h-20h30</Text>
+            </Stack>
+            <Stack align='left'>
+              <Heading textAlign='left' size='lg' color='orange.500'>Turma 3:</Heading>
+              <Text>Quarta 19h-20h30</Text>
+            </Stack>
+            <Stack align='left'>
+              <Heading textAlign='left'size='lg' color='orange.500'>Turma 4:</Heading>
+              <Text>Terça: 13h-14h30</Text>
+            </Stack>
+            <Stack align='left'>
+              <Heading textAlign='left'  size='lg' color='orange.500'>Turma 5:</Heading>
+              <Text>Quinta 17h-18h30</Text>
+            </Stack>
+            <Stack align='left'>
+              <Heading textAlign='left' size='lg' color='orange.500'>Turma 6:</Heading>
+              <Text>Sábado 9h às 10h30</Text>
+            </Stack>
+
+          </SimpleGrid>
+        </Stack>
+
         <Stack
           textAlign="center"
           id="footer"
           spacing="4"
           p="12"
-          mt="24"
+          mt="12"
           align="center"
         >
           <Heading>Ainda com dúvidas?</Heading>

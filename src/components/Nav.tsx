@@ -76,34 +76,37 @@ export default function Nav() {
         <></>
       )}
 
+      {!isLargerThan800 ? 
       <Menu>
-        <MenuButton
-          ml="4"
-          colorScheme="orange"
-          as={IconButton}
-          icon={<FaAlignRight />}
-        ></MenuButton>
-        <MenuList>
-          <MenuItem
-            onClick={() => {
-              goTo(
-                "https://api.whatsapp.com/send?phone=555511933524845&text=Oi!%20Estou%20com%20d%C3%BAvidas%20sobre%20o%20curso%20iniciante%20em%20franc%C3%AAs.%20Voc%C3%AA%20pode%20me%20ajudar%3F"
-              );
-            }}
-          >
-            Entrar em contato
-          </MenuItem>
-          <Link to="bgImage" smooth offset={-24}>
-            <MenuItem>Professores</MenuItem>
-          </Link>
-          <Link to="sobre" smooth offset={-24}>
-            <MenuItem>Sobre</MenuItem>
-          </Link>
-          <Link to="planos" smooth offset={-24}>
-            <MenuItem>Planos</MenuItem>
-          </Link>
-        </MenuList>
-      </Menu>
+      <MenuButton
+        ml="4"
+        colorScheme="orange"
+        as={IconButton}
+        icon={<FaAlignRight />}
+      ></MenuButton>
+      <MenuList>
+        <MenuItem
+          onClick={() => {
+            goTo(
+              "https://api.whatsapp.com/send?phone=555511933524845&text=Oi!%20Estou%20com%20d%C3%BAvidas%20sobre%20o%20curso%20iniciante%20em%20franc%C3%AAs.%20Voc%C3%AA%20pode%20me%20ajudar%3F"
+            );
+          }}
+        >
+          Entrar em contato
+        </MenuItem>
+        <Link to="bgImage" smooth offset={-24}>
+          <MenuItem>Professores</MenuItem>
+        </Link>
+        <Link to="sobre" smooth offset={-24}>
+          <MenuItem>Sobre</MenuItem>
+        </Link>
+        <Link to="planos" smooth offset={-24}>
+          <MenuItem>Planos</MenuItem>
+        </Link>
+      </MenuList>
+    </Menu>
+    :
+    <></>}
     </Flex>
   );
 }

@@ -52,7 +52,7 @@ export default function Header() {
           color="black.50"
           textAlign={isLargerThan1200 ? "initial" : "center"}
         >
-          Turmas com vagas LIMITADAS abertas.
+          Turmas com vagas LIMITADAS.
         </Text>
         <Stack direction="row" spacing="4">
           <Link to="planos" smooth offset={-24}>
