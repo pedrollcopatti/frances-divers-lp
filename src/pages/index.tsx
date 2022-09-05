@@ -191,6 +191,20 @@ const Home: NextPage = () => {
                 aprender e falar francês, e muitas vezes descobrimos essas
                 capacidades aprendendo a língua, e nós te guiamos nesse caminho.
               </Text>
+              <Heading
+                size="xl"
+                color="blue.500"
+                textAlign="center"
+                width="80%"
+              >
+                O que você vai aprender:
+              </Heading>
+              <Text color="black.900" fontSize="18" textAlign="center">
+                Neste curso você vai aprender a se apresentar formal e
+                informalmente, os sons do francês, os grupos verbais e os tempos
+                básicos, falar das atividades cotidianas, e tudo isso com muita
+                prática comunicativa.
+              </Text>
             </Stack>
             <Stack width={isLargerThan800 ? "60%" : "90%"} align="center">
               <Heading
@@ -356,35 +370,59 @@ const Home: NextPage = () => {
           </Stack>
         </Stack>
 
-        <Stack textAlign='center' id="footer" spacing="12" p="12" mt="24" align="center" >
-          <Heading>Horário dos cursos</Heading>
+        <Stack
+          textAlign="center"
+          id="footer"
+          spacing="12"
+          p="12"
+          mt="24"
+          align="center"
+        >
+          <Heading>Horários do curso</Heading>
           <SimpleGrid columns={3} spacing={16}>
-            <Stack align='left'>
-              <Heading textAlign='left' size='lg' color='orange.500'>Turma 1:</Heading>
+            <Stack align="left">
+              <Heading textAlign="left" size="lg" color="orange.500">
+                Turma 1:
+              </Heading>
               <Text>Segunda 10h-11h30</Text>
             </Stack>
-            <Stack align='left'>
-              <Heading textAlign='left' size='lg' color='orange.500'>Turma 2:</Heading>
+            <Stack align="left">
+              <Heading textAlign="left" size="lg" color="orange.500">
+                Turma 2:
+              </Heading>
               <Text>Segunda 19h-20h30</Text>
             </Stack>
-            <Stack align='left'>
-              <Heading textAlign='left' size='lg' color='orange.500'>Turma 3:</Heading>
+            <Stack align="left">
+              <Heading textAlign="left" size="lg" color="orange.500">
+                Turma 3:
+              </Heading>
               <Text>Quarta 19h-20h30</Text>
             </Stack>
-            <Stack align='left'>
-              <Heading textAlign='left'size='lg' color='orange.500'>Turma 4:</Heading>
+            <Stack align="left">
+              <Heading textAlign="left" size="lg" color="orange.500">
+                Turma 4:
+              </Heading>
               <Text>Terça: 13h-14h30</Text>
             </Stack>
-            <Stack align='left'>
-              <Heading textAlign='left'  size='lg' color='orange.500'>Turma 5:</Heading>
+            <Stack align="left">
+              <Heading textAlign="left" size="lg" color="orange.500">
+                Turma 5:
+              </Heading>
               <Text>Quinta 17h-18h30</Text>
             </Stack>
-            <Stack align='left'>
-              <Heading textAlign='left' size='lg' color='orange.500'>Turma 6:</Heading>
+            <Stack align="left">
+              <Heading textAlign="left" size="lg" color="orange.500">
+                Turma 6:
+              </Heading>
               <Text>Sábado 9h às 10h30</Text>
             </Stack>
-
           </SimpleGrid>
+          <Stack align="center">
+            <Heading textAlign="center" size="md" color="black.500">
+              Modalidade
+            </Heading>
+            <Text>Online</Text>
+          </Stack>
         </Stack>
 
         <Stack
