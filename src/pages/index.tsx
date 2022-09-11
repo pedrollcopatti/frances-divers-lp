@@ -31,6 +31,7 @@ import {
 } from "react-icons/fa";
 import { ImPriceTag } from "react-icons/im";
 import { SimpleGrid } from "@chakra-ui/react";
+import { MetaPixel } from "../components/MetaPixel";
 
 const Home: NextPage = () => {
   const MButton = motion(Button);
@@ -45,11 +46,12 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Aprenda Inglês - Francês Divers</title>
+        <title>Aprenda Francês - Francês Divers</title>
         <meta
           name="description"
           content="Você que sempre sonhou em falar francês, e por vários motivos ainda não começou, aproveita essa oportunidade agora! Venha fazer parte do nosso curso FALANDO FRANCÊS."
         />
+        <MetaPixel/>
         <meta name="author" content="Frances Divers" />
         <meta name="keywords" content="Next.JS, Typescript" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -330,7 +332,6 @@ const Home: NextPage = () => {
               <Divider w="100%" />
               <Stack>
                 <Heading
-                  opacity={0.5}
                   fontSize="sm"
                   color="white.900"
                   textDecoration="line-through"
@@ -340,7 +341,7 @@ const Home: NextPage = () => {
                 <Stack direction="row" align="flex-end">
                   <Heading fontSize="4xl">R$ 45,00</Heading>
                   <Text color="white.50" fontSize="12">
-                    / por mês
+                    / à vista em 10x
                   </Text>
                 </Stack>
               </Stack>

@@ -38,7 +38,7 @@ export default function Bullets() {
         <Stack w="10rem">
           <Heading size="md">Início das aulas:</Heading>
           <Heading size="lg" color="orange.500">
-            19/09
+            26/09
           </Heading>
         </Stack>
         {isLargerThan1200 ? <Divider orientation="vertical" h="12" /> : <></>}
