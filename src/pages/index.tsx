@@ -410,7 +410,7 @@ const Home: NextPage = () => {
           align="center"
         >
           <Heading>Horários do curso</Heading>
-          <SimpleGrid columns={3} spacing={16}>
+          <SimpleGrid columns={[1, 2, 3]} spacing={16}>
             <Stack align="left">
               <Heading size="lg" color="orange.500">
                 Turma 1:
