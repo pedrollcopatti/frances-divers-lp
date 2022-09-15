@@ -51,7 +51,7 @@ const Home: NextPage = () => {
           name="description"
           content="Você que sempre sonhou em falar francês, e por vários motivos ainda não começou, aproveita essa oportunidade agora! Venha fazer parte do nosso curso FALANDO FRANCÊS."
         />
-        <MetaPixel/>
+        <MetaPixel />
         <meta name="author" content="Frances Divers" />
         <meta name="keywords" content="Next.JS, Typescript" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -234,11 +234,17 @@ const Home: NextPage = () => {
               <Image alt="book" src={book} />
             </Stack>
           </Stack>
-          <Stack id="planos" align="center" spacing="6">
+          <Stack id="planos" align="center" spacing="24">
             <Heading textAlign="center" width={isLargerThan800 ? "60%" : "90%"}>
               Até quando você irá postergar o início dos seus estudos em
               francês?
             </Heading>
+            <Stack align="center">
+              <Text fontSize="xl" fontWeight="bold">
+                Valor do curso:
+              </Text>
+              <Text>R$497,00</Text>
+            </Stack>
           </Stack>
           <Stack
             mt="20"
@@ -265,7 +271,7 @@ const Home: NextPage = () => {
                   color="white.900"
                   textDecoration="line-through"
                 >
-                  R$ 450,00
+                  R$497,00
                 </Heading>
                 <Stack direction="row" align="flex-end">
                   <Heading color="black.100" fontSize="2xl">
@@ -336,12 +342,12 @@ const Home: NextPage = () => {
                   color="white.900"
                   textDecoration="line-through"
                 >
-                  R$ 450,00
+                  R$497,00
                 </Heading>
                 <Stack direction="row" align="flex-end">
-                  <Heading fontSize="4xl">R$ 45,00</Heading>
+                  <Heading fontSize="4xl">R$ 450,00</Heading>
                   <Text color="white.50" fontSize="12">
-                    / à vista em 10x
+                    / à vista
                   </Text>
                 </Stack>
               </Stack>
