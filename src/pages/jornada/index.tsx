@@ -56,7 +56,7 @@ export default function Jornada() {
                         <meta name="rating" content="general" />
                         <link rel="icon" href="/favicon.ico" />
                   </Head>
-                  <Flex id='flexFlag' direction="column" align="center" width="100%" >
+                  <Flex id='flexFlag' direction="column" align="center" width="100%" background={'#FDF9EE'}>
                         <Nav />
                         <Flex direction='column' width='100%' height='90vh' align='center' justify='center'>
                               <Flex marginTop='8rem' height='30%' width='90%' >
