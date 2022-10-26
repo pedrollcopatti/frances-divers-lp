@@ -1,12 +1,9 @@
 import {
   Badge,
   Button,
-  Center,
   Divider,
   Flex,
   Heading,
-  Highlight,
-  IconButton,
   Link,
   Stack,
   Text,
@@ -15,33 +12,25 @@ import {
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Bullets from "../components/Bullets";
-import Header from "../components/Header";
-import Nav from "../components/Nav";
-import whiteLogo from "../assets/logo_branco.svg";
+import Bullets from "../components/homepage/Bullets";
+import Header from "../components/homepage/Header";
+import Nav from "../components/homepage/Nav";
 import Image from "next/image";
 import book from "../assets/book.png";
 import {
-  FaFacebook,
-  FaInstagram,
-  FaTelegram,
-  FaTiktok,
   FaWhatsapp,
-  FaYoutube,
 } from "react-icons/fa";
 import { ImPriceTag } from "react-icons/im";
 import { SimpleGrid } from "@chakra-ui/react";
-import { MetaPixel } from "../components/MetaPixel";
+import { MetaPixel } from "../components/homepage/MetaPixel";
+import { goTo } from "../utils";
+import { Footer } from "../components/Footer";
 
 const Home: NextPage = () => {
   const MButton = motion(Button);
   const MStack = motion(Stack);
   const [isLargerThan1200] = useMediaQuery("(min-width: 1200px)");
   const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
-
-  function goTo(url: string) {
-    window.open(url, "_blank");
-  }
 
   return (
     <>
@@ -472,7 +461,7 @@ const Home: NextPage = () => {
           <Button
             onClick={() => {
               goTo(
-                "https://api.whatsapp.com/send?phone=555511933524845&text=Oi!%20Estou%20com%20d%C3%BAvidas%20sobre%20o%20curso%20iniciante%20em%20franc%C3%AAs.%20Voc%C3%AA%20pode%20me%20ajudar%3F"
+                "https://api.whatsapp.com/send?phone=5511933524845&text=Oi!%20Estou%20com%20d%C3%BAvidas%20sobre%20a%20O%20Curso%20Iniciante%20em%20Franc%C3%AAs.%20Voc%C3%AAs%20podem%20me%20ajudar%3F"
               );
             }}
             colorScheme="whatsapp"
@@ -481,64 +470,7 @@ const Home: NextPage = () => {
             <Text ml="2">Conversar no WhatsApp</Text>
           </Button>
         </Stack>
-        <Center
-          flexDirection="column"
-          mt="32"
-          backgroundColor="orange.500"
-          w="100%"
-          h="50vh"
-        >
-          <Stack spacing="16">
-            <Image alt="logo" width={150} height={150} src={whiteLogo} />
-
-            <Stack direction="row" spacing="4">
-              <Link href="https://www.facebook.com/francesdiverss/" isExternal>
-                <IconButton
-                  aria-label="facebook"
-                  colorScheme="none"
-                  icon={<FaFacebook />}
-                />
-              </Link>
-              <Link href="https://t.me/francesdivers" isExternal>
-                <IconButton
-                  aria-label="linkedin"
-                  colorScheme="none"
-                  icon={<FaTelegram />}
-                />
-              </Link>
-              <Link
-                href="https://www.instagram.com/francesdiverssp/"
-                isExternal
-              >
-                <IconButton
-                  aria-label="instagram"
-                  colorScheme="none"
-                  icon={<FaInstagram />}
-                />
-              </Link>
-              <Link
-                href="https://www.tiktok.com/@francesdiverssp?is_from_webapp=1&sender_device=pc"
-                isExternal
-              >
-                <IconButton
-                  aria-label="linkedin"
-                  colorScheme="none"
-                  icon={<FaTiktok />}
-                />
-              </Link>
-              <Link
-                href="https://www.youtube.com/channel/UC43l0W_SWN6_bGja6J88eKw"
-                isExternal
-              >
-                <IconButton
-                  aria-label="linkedin"
-                  colorScheme="none"
-                  icon={<FaYoutube />}
-                />
-              </Link>
-            </Stack>
-          </Stack>
-        </Center>
+        <Footer/>
       </Flex>
     </>
   );

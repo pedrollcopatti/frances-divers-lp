@@ -9,7 +9,7 @@ import {
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Link } from "react-scroll";
-import illustration from "../assets/illustration.svg";
+import illustration from "../../assets/illustration.svg";
 
 export default function Header() {
   const [isLargerThan1200] = useMediaQuery("(min-width: 1200px)");

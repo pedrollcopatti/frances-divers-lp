@@ -18,3 +18,10 @@
             background-size:  cover;
             background-position: center;
 }
+
+#flexFlag {
+            background-image: url(../assets/jornada/flag.svg);
+            background-repeat: no-repeat, repeat;
+            background-size:  auto;
+            background-position:  top;
+}

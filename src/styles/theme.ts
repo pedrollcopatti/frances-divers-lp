@@ -7,7 +7,7 @@ const colors = {
                         200: '#F4841C',
                         300: '#F38117',
                         400: '#f37e11',
-                        500: '#EF7C11',
+                        500: '#f37e11',
                         600: '#EA7A10',
                         700: '#E67710',
                         800: '#E1750F',
@@ -52,8 +52,8 @@ const colors = {
 }
 
 const fonts = {
-            heading: `'Poppins', sans-serif`,
-            body: `'Poppins', sans-serif`,
+            heading: `'Palm Springs', sans-serif`,
+            body: `'Quicksand', sans-serif`,
 }
 
 export const theme = extendTheme({ colors, fonts })

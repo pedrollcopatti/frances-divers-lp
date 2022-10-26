@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Button,
   Flex,
   IconButton,
@@ -12,9 +11,9 @@ import {
   useMediaQuery,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import logo from "../assets/letter_logo.svg";
+import logo from "../../assets/letter_logo.svg";
 import { Link } from "react-scroll";
-import { FaAlignRight, FaHamburger } from "react-icons/fa";
+import { FaAlignRight } from "react-icons/fa";
 
 export default function Nav() {
   const [isLargerThan800] = useMediaQuery("(min-width: 800px)");

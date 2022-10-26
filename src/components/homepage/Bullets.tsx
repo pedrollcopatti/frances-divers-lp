@@ -1,6 +1,5 @@
 import { Divider, Flex, Heading, Stack, useMediaQuery } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { BsPatchQuestionFill } from "react-icons/bs";
 import { FaCalendarAlt, FaChalkboardTeacher, FaUsers } from "react-icons/fa";
 import { HiSupport } from "react-icons/hi";
 import { ImPriceTag } from "react-icons/im";
