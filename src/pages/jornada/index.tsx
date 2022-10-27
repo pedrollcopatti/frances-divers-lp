@@ -152,16 +152,18 @@ export default function Jornada() {
             </Flex>
             {isLargerThan1200 && <Spacer />}
             <Flex align="center">
-              <Flex direction="column" alignContent="start" width="10%">
-                <MotionBox
-                  animate={{ y: [0, 10, -10, 0] }}
-                  transition={{ repeat: Infinity, duration: 2 }}
-                >
-                  <Link to="description" smooth offset={-24}>
-                    <Image alt="arrow" src={arrowButton} />
-                  </Link>
-                </MotionBox>
-              </Flex>
+              {!isLargerThan1200 && (
+                <Flex direction="column" alignContent="start" width="10%">
+                  <MotionBox
+                    animate={{ y: [0, 10, -10, 0] }}
+                    transition={{ repeat: Infinity, duration: 2 }}
+                  >
+                    <Link to="description" smooth offset={-24}>
+                      <Image alt="arrow" src={arrowButton} />
+                    </Link>
+                  </MotionBox>
+                </Flex>
+              )}
               <MotionFlex
                 width="80%"
                 cursor="pointer"
