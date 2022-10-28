@@ -8,6 +8,7 @@ import {
   Text,
   useDisclosure,
   useMediaQuery,
+  useToast,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import Image from "next/image";
@@ -30,25 +31,39 @@ import ModalSuccess from "../../components/homepage/jornada/ModalSuccess";
 import { Link } from "react-scroll";
 import FirstText from "../../components/homepage/jornada/FirstText";
 import FirstHeader from "../../components/homepage/jornada/FirstHeader";
+import useRegisterUser from "../../hooks/useRegisterUser";
 
 export default function Jornada() {
   const MotionBox = motion(Box);
   const MotionFlex = motion(Flex);
-  const [nome, setNome] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [numero, setNumero] = useState("");
+  const [phone, setPhone] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isLargerThan1200] = useMediaQuery("(min-width: 1200px)");
+  const toast = useToast();
+  const { registerUser } = useRegisterUser();
 
   function clearForm() {
-    setNome("");
+    setFirstName("");
+    setLastName("");
     setEmail("");
-    setNumero("");
+    setPhone("");
   }
 
-  function handleSubmit() {
-    clearForm();
-    onOpen();
+  async function handleSubmit() {
+    const {msg, registered} = await registerUser({email, phone, firstName, lastName})
+    if(registered){
+     return onOpen();
+    }
+    return  toast({
+      title: 'Ops! Ocorreu um erro.',
+      description: msg,
+      status: 'error',
+      duration: 5000,
+      isClosable: true,
+    })
   }
 
   return (
@@ -192,13 +207,22 @@ export default function Jornada() {
           align="center"
         >
           <Stack spacing="4" width={isLargerThan1200 ? "40%" : ["100%", "70%"]}>
+            <Stack direction='row' spacing='8' width='100%'>
             <InputForm
-              value={nome}
+              value={firstName}
               type="text"
-              field="nome completo"
+              field="nome"
               placeholder="seu nome"
-              setValue={setNome}
+              setValue={setFirstName}
             />
+            <InputForm
+              value={lastName}
+              type="text"
+              field="sobrenome"
+              placeholder="seu nome"
+              setValue={setLastName}
+            />
+            </Stack>
             <InputForm
               value={email}
               type="email"
@@ -207,11 +231,11 @@ export default function Jornada() {
               setValue={setEmail}
             />
             <InputForm
-              value={numero}
+              value={phone}
               type="tel"
               field="número whatsapp"
               placeholder="(00) 0 0000-0000"
-              setValue={setNumero}
+              setValue={setPhone}
             />
             <Button
               colorScheme="orange"
@@ -219,7 +243,7 @@ export default function Jornada() {
               width={["100%", "70%", "50%"]}
               borderRadius="full"
               _hover={{ color: "white.500", backgroundColor: "blue.500" }}
-              disabled={!nome || !email || !numero}
+              disabled={!firstName || !email}
               onClick={handleSubmit}
             >
               QUERO PARTICIPAR!
