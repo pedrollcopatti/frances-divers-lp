@@ -4,13 +4,18 @@ import { theme } from "../styles/theme";
 import "../styles/global.css";
 import { MetaPixel } from "../components/homepage/MetaPixel";
 import Fonts from "../components/homepage/jornada/Fonts";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <Fonts />
       <MetaPixel />
-      <Component {...pageProps} />
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />
+      </QueryClientProvider>
     </ChakraProvider>
   );
 }

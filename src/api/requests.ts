@@ -1,20 +1,35 @@
+import { useMutation } from "@tanstack/react-query";
 import { AddUserInListProps, User } from "../types";
 import { api } from "./api";
 
-export async function registerUserQuery(user: User) {
-   const response = await api.post('/contacts', {
-      contact: {
-         user
-      }
-   });
-   return response;
-}
+export const useRegisterUser = () => {
+   return useMutation((payload: User) =>
+     api
+       .post(`/contacts`, {
+         contact: {
+            firstName: payload.firstName,
+                     lastName: payload.lastName,
+                     email: payload.email,
+                     phone: payload.phone
+         }
+       }, {
+       })
+       .then(r => {return r}),
+   );
+ };
+ 
 
-export async function addUserInList(data: AddUserInListProps) {
-   const response = await api.post('/contactLists', {
-      contactList: {
-         data
-      }
-   });
-   return response;
-}
+ export const useAddUserInList = () => {
+   return useMutation((payload: AddUserInListProps) =>
+     api
+       .post(`/contactLists`, {
+         contactList: {
+            list: payload.list,
+         contact: payload.contact,
+         status: payload.status  
+         }
+       }, {
+       })
+       .then(r => {return r}),
+   );
+ };

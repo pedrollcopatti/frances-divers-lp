@@ -3,6 +3,7 @@ import {
   Button,
   Flex,
   Heading,
+  Input,
   Spacer,
   Stack,
   Text,
@@ -22,6 +23,7 @@ import videoClass from "../../assets/jornada/video-class.svg";
 import womanPhone from "../../assets/jornada/woman-phone.svg";
 import { motion } from "framer-motion";
 import InputForm from "../../components/homepage/jornada/InputForm";
+import InputMask from "react-input-mask";
 import { useState } from "react";
 import { HiOutlineArrowRight } from "react-icons/hi";
 import { ImWhatsapp } from "react-icons/im";
@@ -42,7 +44,6 @@ export default function Jornada() {
   const [phone, setPhone] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isLargerThan1200] = useMediaQuery("(min-width: 1200px)");
-  const toast = useToast();
   const { registerUser } = useRegisterUser();
 
   function clearForm() {
@@ -53,18 +54,10 @@ export default function Jornada() {
   }
 
   async function handleSubmit() {
-    const {msg, registered} = await registerUser({email, phone, firstName, lastName})
-    if(registered){
-     return onOpen();
-    }
-    return  toast({
-      title: 'Ops! Ocorreu um erro.',
-      description: msg,
-      status: 'error',
-      duration: 5000,
-      isClosable: true,
-    })
+    registerUser({ email, phone, firstName, lastName }, onOpen);
   }
+
+  console.log("aodif");
 
   return (
     <>
@@ -207,21 +200,21 @@ export default function Jornada() {
           align="center"
         >
           <Stack spacing="4" width={isLargerThan1200 ? "40%" : ["100%", "70%"]}>
-            <Stack direction='row' spacing='8' width='100%'>
-            <InputForm
-              value={firstName}
-              type="text"
-              field="nome"
-              placeholder="seu nome"
-              setValue={setFirstName}
-            />
-            <InputForm
-              value={lastName}
-              type="text"
-              field="sobrenome"
-              placeholder="seu nome"
-              setValue={setLastName}
-            />
+            <Stack direction="row" spacing="8" width="100%">
+              <InputForm
+                value={firstName}
+                type="text"
+                field="nome"
+                placeholder="seu nome"
+                setValue={setFirstName}
+              />
+              <InputForm
+                value={lastName}
+                type="text"
+                field="sobrenome"
+                placeholder="seu nome"
+                setValue={setLastName}
+              />
             </Stack>
             <InputForm
               value={email}
@@ -230,13 +223,22 @@ export default function Jornada() {
               placeholder="seuemail@exemplo.com"
               setValue={setEmail}
             />
-            <InputForm
-              value={phone}
-              type="tel"
-              field="número whatsapp"
-              placeholder="(00) 0 0000-0000"
-              setValue={setPhone}
-            />
+            <Stack>
+              <Text fontFamily="heading">Telefone</Text>
+              <Input
+                as={InputMask}
+                mask="(99)9 9999-9999"
+                width="100%"
+                borderRadius="full"
+                _placeholder={{ color: "orange.500" }}
+                borderColor="orange.500"
+                variant="outline"
+                value={phone}
+                type="tel"
+                placeholder="(00)0 000-000"
+                onChange={(e) => setPhone(e.target.value)}
+              />
+            </Stack>
             <Button
               colorScheme="orange"
               fontFamily="heading"
