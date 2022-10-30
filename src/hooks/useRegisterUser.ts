@@ -15,12 +15,13 @@ function useRegister() {
 
    console.log(isLoading);
    console.log(data);
-  async function registerUser(user: User, onOpen: ()=> void) {
+  async function registerUser(user: User, onOpen: ()=> void, clear: () => void) {
     mutateRegisterUser(user, {
       onSuccess: (res) => {
         mutateAddUserList({ contact: res.data.contact.id, list: 2, status: 1 }, {
                onSuccess: () => {
                   onOpen();
+                  clear()
                }
              });
       },

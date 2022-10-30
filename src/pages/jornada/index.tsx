@@ -44,7 +44,7 @@ export default function Jornada() {
   const [phone, setPhone] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isLargerThan1200] = useMediaQuery("(min-width: 1200px)");
-  const { registerUser } = useRegisterUser();
+  const { registerUser, isLoading } = useRegisterUser();
 
   function clearForm() {
     setFirstName("");
@@ -54,7 +54,7 @@ export default function Jornada() {
   }
 
   async function handleSubmit() {
-    registerUser({ email, phone, firstName, lastName }, onOpen);
+    registerUser({ email, phone, firstName, lastName }, onOpen, clearForm);
   }
 
   console.log("aodif");
@@ -242,6 +242,7 @@ export default function Jornada() {
             <Button
               colorScheme="orange"
               fontFamily="heading"
+              isLoading={isLoading}
               width={["100%", "70%", "50%"]}
               borderRadius="full"
               _hover={{ color: "white.500", backgroundColor: "blue.500" }}
