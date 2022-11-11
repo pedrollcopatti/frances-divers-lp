@@ -84,7 +84,7 @@ export default function Jornada() {
         width="100%"
         background={"#FDF9EE"}
       >
-        <Nav />
+        <Nav idLink="form"/>
         <Flex
           direction="column"
           width="100%"

@@ -58,3 +58,7 @@ export const extraBulletProps = [
     text: "Deseja aprender francês para ler textos originais e ver filmes sem legenda.",
   },
 ];
+
+export function goTo(url: string) {
+  window.open(url, "_blank");
+}

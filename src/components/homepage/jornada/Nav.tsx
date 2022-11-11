@@ -1,7 +1,11 @@
 import { Button, Flex, Heading, Spacer, useMediaQuery } from "@chakra-ui/react";
 import { Link } from "react-scroll";
 
-export default function Nav() {
+type NavProps = {
+  idLink: string
+}
+
+export default function Nav({idLink}: NavProps) {
   const [isLargerThan1200] = useMediaQuery("(min-width: 1200px)");
 
   function goTo(url: string) {
@@ -23,7 +27,7 @@ export default function Nav() {
       {isLargerThan1200 && (
         <>
           <Spacer />
-          <Link to="form" smooth offset={-24}>
+          <Link to={idLink} smooth offset={-24}>
             <Button
               variant={"outline"}
               colorScheme="orange"

@@ -1,12 +1,10 @@
 import {
-  Box,
   Button,
   Divider,
   Flex,
   Grid,
   Heading,
   Link,
-  SimpleGrid,
   Spacer,
   Stack,
   Text,
@@ -17,12 +15,12 @@ import Image from "next/image";
 import { BiVideoRecording } from "react-icons/bi";
 import Nav from "../../components/homepage/jornada/Nav";
 import BulletItem from "../../components/lp/BulletItem";
-import { bulletProps, extraBulletProps, verticalBulletProps } from "./constants";
+import { bulletProps, extraBulletProps, goTo, verticalBulletProps } from "./constants";
 import atendimento from "../../assets/lp/atendimento.svg";
 import experiencia from "../../assets/lp/experiencia.svg";
 import VerticalBulletItem from "../../components/lp/VerticalBulletItem";
 import { Footer } from "../../components/Footer";
-import { ImPriceTag } from "react-icons/im";
+import { ImPriceTag, ImWhatsapp } from "react-icons/im";
 
 export default function Page() {
   const HeadingMotion = motion(Heading);
@@ -50,17 +48,18 @@ export default function Page() {
         align="center"
         width="100%"
       >
-        <Nav />
+        <Nav idLink={'cta'}/>
         <Stack align="center" spacing="24" marginTop="7rem">
           <Flex direction="column" align="center" width="60%">
             <Heading size="4xl">DO ZERO AO</Heading>
             <Heading size="4xl">AVANÇADO</Heading>
+            <Heading size="4xl" textColor='blue.500'>NO FRANCÊS</Heading>
             <Text marginTop={12} textAlign="center" fontSize="xl">
               Um programa completo feito para você falar francês com segurança e
               naturalidade{" "}
               <strong>em até 6 meses (mesmo começando do zero!)</strong>
             </Text>
-            <Button marginTop='2rem' colorScheme='whatsapp' size='lg' borderRadius='full'>
+            <Button marginTop='2rem' colorScheme='whatsapp' size='lg' borderRadius='full' onClick={()=> goTo('https://pay.hotmart.com/S50456798G')  }>
               Quero começar a aprender
             </Button>
           </Flex>
@@ -152,7 +151,7 @@ export default function Page() {
               />
             ))}
           </Stack>
-          <Button colorScheme='whatsapp' size='lg' borderRadius='full'>
+          <Button colorScheme='whatsapp' size='lg' borderRadius='full'  onClick={()=> goTo('https://pay.hotmart.com/S50456798G')  }>
             Quero começar a aprender
           </Button>
         </Stack>
@@ -175,6 +174,7 @@ export default function Page() {
         </Flex>
         <Flex>
         <Stack
+              id='cta'
               p="8"
               width="22rem"
               backgroundColor="blue.500"
@@ -202,20 +202,14 @@ export default function Page() {
                  
                 </Stack>
               </Stack>
-              <Link
-                width="100%"
-                textDecor="none"
-                isExternal
-                href={"https://pay.hotmart.com/V73934874Y?bid=1661572707879"}
-              >
                 <Button
                   w="100%"
                   variant="solid"
                   shadow="lg"
+                  onClick={()=> goTo('https://pay.hotmart.com/S50456798G')  }
                 >
                   Quero agora!
                 </Button>
-              </Link>
               <Stack align="center" spacing="4" textAlign="center">
               <Text color='white.500'>Bônus com a compra:</Text>
                 <Flex align="center">
@@ -245,6 +239,32 @@ export default function Page() {
               </Link>
             </Stack>
         </Flex>
+        <Stack
+          spacing="4"
+          width={["100%", "70%", "50%"]}
+          align="center"
+          marginTop="10rem"
+        >
+          <Heading color="blue.500">Ainda com dúvidas?</Heading>
+          <Text>Entre em contato pelo número:</Text>
+          <Text>(11) 93352-4845</Text>
+          <Button
+            colorScheme="blue"
+            borderRadius="full"
+            width={["70%", "60%"]}
+            _hover={{ color: "white.500", backgroundColor: "green.500" }}
+            onClick={() => {
+              goTo(
+                "https://api.whatsapp.com/send?phone=5511933524845&text=Oi!%20Estou%20com%20d%C3%BAvidas%20sobre%20a%20Jornada%20Minha%20Vez%20de%20Falar%20Franc%C3%AAs.%20Voc%C3%AAs%20podem%20me%20ajudar%3F"
+              );
+            }}
+          >
+            <Stack direction="row" align="center">
+              <Text>Conversar no WhatsApp</Text>
+              <ImWhatsapp />
+            </Stack>
+          </Button>
+        </Stack>
         <Footer/>
       </Flex>
     </>
