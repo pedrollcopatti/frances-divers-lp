@@ -16,14 +16,14 @@ import Image from "next/image";
 import { BiVideoRecording } from "react-icons/bi";
 import Nav from "../../components/homepage/jornada/Nav";
 import BulletItem from "../../components/lp/BulletItem";
-import { bulletProps, extraBulletProps, goTo, verticalBulletProps } from "./constants";
+import { bulletProps, extraBulletProps, goTo, verticalBulletProps } from "../../components/lp/constants";
 import atendimento from "../../assets/lp/atendimento.svg";
 import experiencia from "../../assets/lp/experiencia.svg";
 import VerticalBulletItem from "../../components/lp/VerticalBulletItem";
 import { Footer } from "../../components/Footer";
 import { ImPriceTag, ImWhatsapp } from "react-icons/im";
 
-export default function Page() {
+export default function DoZeroAoAvancado() {
   const HeadingMotion = motion(Heading);
   const [isLargerThan1000] = useMediaQuery('(min-width: 1000px)')
 
