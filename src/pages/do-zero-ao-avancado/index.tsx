@@ -8,6 +8,7 @@ import {
   Spacer,
   Stack,
   Text,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Head from "next/head";
@@ -24,6 +25,7 @@ import { ImPriceTag, ImWhatsapp } from "react-icons/im";
 
 export default function Page() {
   const HeadingMotion = motion(Heading);
+  const [isLargerThan1000] = useMediaQuery('(min-width: 1000px)')
 
   return (
     <>
@@ -51,9 +53,9 @@ export default function Page() {
         <Nav idLink={'cta'}/>
         <Stack align="center" spacing="24" marginTop="7rem">
           <Flex direction="column" align="center" width="60%">
-            <Heading size="4xl">DO ZERO AO</Heading>
-            <Heading size="4xl">AVANÇADO</Heading>
-            <Heading size="4xl" textColor='blue.500'>NO FRANCÊS</Heading>
+            <Heading  textAlign='center' size={["xl", "2xl", "4xl"]}>DO ZERO AO</Heading>
+            <Heading  textAlign='center' size={["xl", "2xl", "4xl"]}>AVANÇADO</Heading>
+            <Heading textAlign='center'  size={["2xl", "2xl", "4xl"]} textColor='blue.500'>NO FRANCÊS</Heading>
             <Text marginTop={12} textAlign="center" fontSize="xl">
               Um programa completo feito para você falar francês com segurança e
               naturalidade{" "}
@@ -63,7 +65,7 @@ export default function Page() {
               Quero começar a aprender
             </Button>
           </Flex>
-          <Stack direction="row" spacing={12}>
+          <Stack direction={isLargerThan1000 ? 'row' : 'column'} spacing={12} align='center' justify='center' width={['80%', '70%','90%']}>
             {bulletProps.map((item) => (
               <BulletItem
                 key={item.title}
@@ -74,8 +76,8 @@ export default function Page() {
             ))}
           </Stack>
         </Stack>
-        <Flex width="90%" direction="row" marginTop="7rem" align="center">
-          <Stack width="50%">
+        <Flex width="90%" direction={["column", "column", "row"]} marginTop="7rem" align="center">
+          <Stack width={["90%", "80%", "50%"]} textAlign={['center', 'center' ,'initial']} spacing='4'>
             <HeadingMotion
               whileHover={{ color: ["#1B75B1", "#f37e11"] }}
               size="2xl"
@@ -90,10 +92,11 @@ export default function Page() {
           </Stack>
           <Spacer />
           <Stack
+          marginTop={['2rem', '2rem', '0']}
             spacing={2}
             paddingY={8}
             shadow="lg"
-            width="40%"
+            width={["80%", "70%", "40%"]}
             align="center"
             justify="center"
           >
@@ -112,11 +115,11 @@ export default function Page() {
             </Text>
           </Stack>
         </Flex>
-        <Flex width="90%" marginTop="5rem" align="center">
+        <Flex width="90%" direction={['column' , 'row', 'row']} marginTop="5rem" align="center">
           <Flex width="50%" align="center" justify="center">
             <Image src={atendimento} alt="atendimento" />
           </Flex>
-          <Stack width="50%" spacing={12}>
+          <Stack width={["90%", "50%", "50%"]} spacing={12} textAlign={['center', 'initial', 'initial']}>
             <Heading size='2xl' textColor="orange.500">
               Acompanhamento Personalizado
             </Heading>
@@ -126,8 +129,8 @@ export default function Page() {
             </Text>
           </Stack>
         </Flex>
-        <Flex width="90%" align="center">
-          <Stack width="50%" spacing={12}>
+        <Flex marginTop={['2rem', 0, 0]} width="90%" align="center" direction={['column' , 'row', 'row']}>
+          <Stack width={["90%", "50%", "50%"]} spacing={12} textAlign={['center', 'initial', 'initial']}>
             <Heading size='2xl' textColor="blue.500">
               Experiência Imersiva
             </Heading>
@@ -140,8 +143,8 @@ export default function Page() {
           </Flex>
         </Flex>
         <Stack background='orange.500' marginTop="5rem" align="center" spacing='12' paddingBottom='5rem'>
-          <Heading marginTop='2rem' width='80%' textAlign='center' size='2xl' textColor='white.500'>O que você vai ter no Francês com Francês-Divers</Heading>
-          <Stack align='center' spacing='4'>
+          <Heading marginTop='2rem' width='80%' textAlign='center' size={['xl', '2xl', '2xl']} textColor='white.500'>O que você vai ter no Francês com Francês-Divers</Heading>
+          <Stack align='center' spacing='4' >
             {verticalBulletProps.map((item) => (
               <VerticalBulletItem
                 key={item.title}
@@ -156,10 +159,10 @@ export default function Page() {
           </Button>
         </Stack>
         <Stack width='90%' marginTop="3rem" align="center" spacing='12'>
-          <Heading marginTop='2rem' width='80%' textAlign='center' size='2xl' textColor='blue.500'>Para Quem é o Curso?</Heading>
-          <Text width='60%' fontSize='xl' textAlign='center'>O curso é voltado para pessoas de todas as idades que estão iniciando do zero ou já tem um nível básico, e agora desejam aprender a falar francês de forma definitiva! E para quem...</Text>
+          <Heading marginTop='2rem' width={['90%', '80%', '80%']} textAlign='center' size='2xl' textColor='blue.500'>Para Quem é o Curso?</Heading>
+          <Text width={['90%', '70%', '60%']} fontSize='xl' textAlign='center'>O curso é voltado para pessoas de todas as idades que estão iniciando do zero ou já tem um nível básico, e agora desejam aprender a falar francês de forma definitiva! E para quem...</Text>
         </Stack>
-        <Grid marginTop='5rem' templateColumns='repeat(2, 4fr)' gap={12}>
+        <Grid marginTop='5rem' templateColumns={['repeat(1, 4fr)', 'repeat(1, 4fr)', 'repeat(2, 4fr)']} gap={12} width='60%'>
           {extraBulletProps.map((item) => (
             <BulletItem
               key={item.title}
@@ -169,8 +172,8 @@ export default function Page() {
             />
           ))}
         </Grid>
-        <Flex marginTop='2rem' shadow='lg' width='55%' height='5rem' justifyContent='center' alignItems='center' borderRadius='xl' border='2px solid' borderColor='blue.500'>
-          <Text fontSize='2xl' color='blue.500' fontWeight='bold'>Para todos que querem aprender FRANCÊS!</Text>
+        <Flex marginTop='2rem' shadow='lg' width={['80%', '75%', '55%']} height='5rem' justifyContent='center' alignItems='center' borderRadius='xl' border='2px solid' borderColor='blue.500'>
+          <Text textAlign='center' fontSize={['m', 'xl', '2xl']} color='blue.500' fontWeight='bold'>Para todos que querem aprender FRANCÊS!</Text>
         </Flex>
         <Flex>
         <Stack

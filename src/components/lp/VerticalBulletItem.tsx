@@ -14,7 +14,7 @@ export default function VerticalBulletItem({ Icon, text, title }: BulletItemProp
       whileHover={{ x: 10 }}
       direction='row'
       align='center'
-      width="60%"
+      width={["90%", "70%", "60%"]}
       spacing={8}
       padding={8}
       shadow="lg"

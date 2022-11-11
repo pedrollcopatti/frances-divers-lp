@@ -12,7 +12,7 @@ export default function BulletItem({ Icon, text, title }: BulletItemProps) {
   return (
     <StackMotion
       whileHover={{ x: 10, rotate: 5 }}
-      width="20rem"
+      width='10de'
       spacing={4}
       padding={8}
       shadow="lg"
