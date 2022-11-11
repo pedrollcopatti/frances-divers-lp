@@ -1,8 +1,12 @@
 import {
   Box,
+  Button,
+  Divider,
   Flex,
   Grid,
   Heading,
+  Link,
+  SimpleGrid,
   Spacer,
   Stack,
   Text,
@@ -13,9 +17,12 @@ import Image from "next/image";
 import { BiVideoRecording } from "react-icons/bi";
 import Nav from "../../components/homepage/jornada/Nav";
 import BulletItem from "../../components/lp/BulletItem";
-import { bulletProps } from "./constants";
+import { bulletProps, extraBulletProps, verticalBulletProps } from "./constants";
 import atendimento from "../../assets/lp/atendimento.svg";
 import experiencia from "../../assets/lp/experiencia.svg";
+import VerticalBulletItem from "../../components/lp/VerticalBulletItem";
+import { Footer } from "../../components/Footer";
+import { ImPriceTag } from "react-icons/im";
 
 export default function Page() {
   const HeadingMotion = motion(Heading);
@@ -53,6 +60,9 @@ export default function Page() {
               naturalidade{" "}
               <strong>em até 6 meses (mesmo começando do zero!)</strong>
             </Text>
+            <Button marginTop='2rem' colorScheme='whatsapp' size='lg' borderRadius='full'>
+              Quero começar a aprender
+            </Button>
           </Flex>
           <Stack direction="row" spacing={12}>
             {bulletProps.map((item) => (
@@ -107,16 +117,135 @@ export default function Page() {
           <Flex width="50%" align="center" justify="center">
             <Image src={atendimento} alt="atendimento" />
           </Flex>
-          <Stack width="50%" spacing={8}>
-            <Heading textColor="orange.500">
+          <Stack width="50%" spacing={12}>
+            <Heading size='2xl' textColor="orange.500">
               Acompanhamento Personalizado
             </Heading>
             <Text fontSize="large">
               Suporte diário ao longo de toda a sua jornada de aprendizagem com
-              plantão de dúvidas e apoio pedagógico para você não perder tempo.
+              <strong>plantão de dúvidas e apoio pedagógico</strong> para você não perder tempo.
             </Text>
           </Stack>
         </Flex>
+        <Flex width="90%" align="center">
+          <Stack width="50%" spacing={12}>
+            <Heading size='2xl' textColor="blue.500">
+              Experiência Imersiva
+            </Heading>
+            <Text fontSize="large">
+              Contato com o francês da vida real através de áudios nativos, musicas e diálogos em francês. Mais do que aprender a língua, <strong> você irá ter uma imersão na cultura francófona.</strong>
+            </Text>
+          </Stack>
+          <Flex width="50%" align="center" justify="center">
+            <Image src={experiencia} alt="atendimento" />
+          </Flex>
+        </Flex>
+        <Stack background='orange.500' marginTop="5rem" align="center" spacing='12' paddingBottom='5rem'>
+          <Heading marginTop='2rem' width='80%' textAlign='center' size='2xl' textColor='white.500'>O que você vai ter no Francês com Francês-Divers</Heading>
+          <Stack align='center' spacing='4'>
+            {verticalBulletProps.map((item) => (
+              <VerticalBulletItem
+                key={item.title}
+                Icon={item.Icon}
+                text={item.text}
+                title={item.title}
+              />
+            ))}
+          </Stack>
+          <Button colorScheme='whatsapp' size='lg' borderRadius='full'>
+            Quero começar a aprender
+          </Button>
+        </Stack>
+        <Stack width='90%' marginTop="3rem" align="center" spacing='12'>
+          <Heading marginTop='2rem' width='80%' textAlign='center' size='2xl' textColor='blue.500'>Para Quem é o Curso?</Heading>
+          <Text width='60%' fontSize='xl' textAlign='center'>O curso é voltado para pessoas de todas as idades que estão iniciando do zero ou já tem um nível básico, e agora desejam aprender a falar francês de forma definitiva! E para quem...</Text>
+        </Stack>
+        <Grid marginTop='5rem' templateColumns='repeat(2, 4fr)' gap={12}>
+          {extraBulletProps.map((item) => (
+            <BulletItem
+              key={item.title}
+              Icon={item.Icon}
+              text={item.text}
+              title={item.title}
+            />
+          ))}
+        </Grid>
+        <Flex marginTop='2rem' shadow='lg' width='55%' height='5rem' justifyContent='center' alignItems='center' borderRadius='xl' border='2px solid' borderColor='blue.500'>
+          <Text fontSize='2xl' color='blue.500' fontWeight='bold'>Para todos que querem aprender FRANCÊS!</Text>
+        </Flex>
+        <Flex>
+        <Stack
+              p="8"
+              width="22rem"
+              backgroundColor="blue.500"
+              borderRadius="xl"
+              spacing="8"
+              justify="center"
+              shadow="2xl"
+              align="center"
+              marginTop='4rem'            
+            >
+              <Heading textAlign='center' size="lg" textColor='white'>
+                Comece agora mesmo
+              </Heading>
+              <Divider w="100%" />
+              <Stack>
+                <Heading
+                  fontSize="sm"
+                  color="white.900"
+                  textDecoration="line-through"
+                >
+                  R$1497,00
+                </Heading>
+                <Stack direction="row" align="flex-end">
+                  <Heading fontSize="4xl" textColor='green.200'>R$ 997,00</Heading>
+                 
+                </Stack>
+              </Stack>
+              <Link
+                width="100%"
+                textDecor="none"
+                isExternal
+                href={"https://pay.hotmart.com/V73934874Y?bid=1661572707879"}
+              >
+                <Button
+                  w="100%"
+                  variant="solid"
+                  shadow="lg"
+                >
+                  Quero agora!
+                </Button>
+              </Link>
+              <Stack align="center" spacing="4" textAlign="center">
+              <Text color='white.500'>Bônus com a compra:</Text>
+                <Flex align="center">
+                  <ImPriceTag color="#EDF8FA" />
+                  <Text ml="4" color="white.50" fontWeight="bold">
+                    Valor Promocional
+                  </Text>
+                </Flex>
+                <Text color="white.50">E-book Saiba o que te impede de aprender francês</Text>
+                <Text textAlign="center" color="white.50" fontWeight="bold">
+                Aulas de conversação com foco na pronúncia
+                </Text>
+                <Text color="white.50">Lista de filmes franceses para treinar seu francês o</Text>
+                <Text color="white.50">
+                Playlist super legal e atual para você curtir e aprender francês
+                </Text>
+              </Stack>
+              <Divider w="100%" />
+              <Link
+                href="https://api.whatsapp.com/send?phone=555511933524845&text=Oi!%20Estou%20com%20d%C3%BAvidas%20sobre%20o%20curso%20iniciante%20em%20franc%C3%AAs.%20Voc%C3%AA%20pode%20me%20ajudar%3F"
+                isExternal
+                fontSize="12"
+                color="white.50"
+                fontWeight="normal"
+              >
+                Entrar em contato
+              </Link>
+            </Stack>
+        </Flex>
+        <Footer/>
       </Flex>
     </>
   );
