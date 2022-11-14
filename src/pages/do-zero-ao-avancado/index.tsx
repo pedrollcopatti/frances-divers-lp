@@ -1,4 +1,6 @@
 import {
+  AspectRatio,
+  Box,
   Button,
   Divider,
   Flex,
@@ -23,9 +25,39 @@ import VerticalBulletItem from "../../components/lp/VerticalBulletItem";
 import { Footer } from "../../components/Footer";
 import { ImPriceTag, ImWhatsapp } from "react-icons/im";
 
+import ReactPlayer from "react-player";
+import { Carousel } from "react-responsive-carousel";
+import YouTube, { YouTubePlayer, YouTubeProps } from "react-youtube";
+import YoutubeVideo from "../../components/lp/YoutubeVideo";
+import { useTimer } from 'react-timer-hook';
+
 export default function DoZeroAoAvancado() {
+  const time = new Date();
+  time.setSeconds(time.getSeconds() + 1623);
+
   const HeadingMotion = motion(Heading);
   const [isLargerThan1000] = useMediaQuery('(min-width: 1000px)')
+  const opts: YouTubeProps['opts'] = {
+    width: "1080",
+    height: "600",
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
+
+  const {
+    seconds,
+    minutes,
+    hours,
+    days,
+    isRunning,
+    start,
+    pause,
+    resume,
+    restart,
+  } = useTimer({ expiryTimestamp: time, onExpire: () => console.warn('onExpire called') });
+
 
   return (
     <>
@@ -50,22 +82,32 @@ export default function DoZeroAoAvancado() {
         align="center"
         width="100%"
       >
-        <Nav idLink={'cta'}/>
+        <Flex height={16} position="fixed" backgroundColor="red.400" width="100%" align="center" justify="center">
+          <Text fontWeight="bold" fontSize={["small","medium","xl"]} color="white.500">Essa promoção acaba em: {days} dias, {hours} horas, {minutes} min, {seconds} seg</Text>
+        </Flex>
+        <Flex justify="center" width="100%" marginTop={12}>
+        <Nav idLink={'cta'} />
+        </Flex>
         <Stack align="center" spacing="24" marginTop="7rem">
           <Flex direction="column" align="center" width="60%">
-            <Heading  textAlign='center' size={["xl", "2xl", "4xl"]}>DO ZERO AO</Heading>
-            <Heading  textAlign='center' size={["xl", "2xl", "4xl"]}>AVANÇADO</Heading>
-            <Heading textAlign='center'  size={["2xl", "2xl", "4xl"]} textColor='blue.500'>NO FRANCÊS</Heading>
+  
+          <Heading textAlign='center' size={["xl", "2xl", "4xl"]}>DO ZERO AO</Heading>
+            <Heading textAlign='center' size={["xl", "2xl", "4xl"]}>AVANÇADO</Heading>
+            <Heading textAlign='center' size={["2xl", "2xl", "4xl"]} textColor='blue.500'>NO FRANCÊS</Heading>
             <Text marginTop={12} textAlign="center" fontSize="xl">
               Um programa completo feito para você falar francês com segurança e
               naturalidade{" "}
               <strong>em até 6 meses (mesmo começando do zero!)</strong>
             </Text>
-            <Button marginTop='2rem' colorScheme='whatsapp' size='lg' borderRadius='full' onClick={()=> goTo('https://pay.hotmart.com/S50456798G')  }>
+            <Button marginTop='2rem' colorScheme='whatsapp' size='lg' borderRadius='full' onClick={() => goTo('https://pay.hotmart.com/S50456798G')}>
               Quero começar a aprender
             </Button>
+            <Stack align="center" marginTop="5rem" height="650" spacing={8}>
+              <Heading>Veja o vídeo abaixo</Heading>
+              <YouTube title="Apresentação Francês-Divers" opts={opts} videoId="yE4UhbqZBQE"/>
+            </Stack>
           </Flex>
-          <Stack direction={isLargerThan1000 ? 'row' : 'column'} spacing={12} align='center' justify='center' width={['80%', '70%','90%']}>
+          <Stack direction={isLargerThan1000 ? 'row' : 'column'} spacing={12} align='center' justify='center' width={['80%', '70%', '90%']}>
             {bulletProps.map((item) => (
               <BulletItem
                 key={item.title}
@@ -77,7 +119,7 @@ export default function DoZeroAoAvancado() {
           </Stack>
         </Stack>
         <Flex width="90%" direction={["column", "column", "row"]} marginTop="7rem" align="center">
-          <Stack width={["90%", "80%", "50%"]} textAlign={['center', 'center' ,'initial']} spacing='4'>
+          <Stack width={["90%", "80%", "50%"]} textAlign={['center', 'center', 'initial']} spacing='4'>
             <HeadingMotion
               whileHover={{ color: ["#1B75B1", "#f37e11"] }}
               size="2xl"
@@ -92,7 +134,7 @@ export default function DoZeroAoAvancado() {
           </Stack>
           <Spacer />
           <Stack
-          marginTop={['2rem', '2rem', '0']}
+            marginTop={['2rem', '2rem', '0']}
             spacing={2}
             paddingY={8}
             shadow="lg"
@@ -115,7 +157,7 @@ export default function DoZeroAoAvancado() {
             </Text>
           </Stack>
         </Flex>
-        <Flex width="90%" direction={['column' , 'row', 'row']} marginTop="5rem" align="center">
+        <Flex width="90%" direction={['column', 'row', 'row']} marginTop="5rem" align="center">
           <Flex width="50%" align="center" justify="center">
             <Image src={atendimento} alt="atendimento" />
           </Flex>
@@ -129,7 +171,7 @@ export default function DoZeroAoAvancado() {
             </Text>
           </Stack>
         </Flex>
-        <Flex marginTop={['2rem', 0, 0]} width="90%" align="center" direction={['column' , 'row', 'row']}>
+        <Flex marginTop={['2rem', 0, 0]} width="90%" align="center" direction={['column', 'row', 'row']}>
           <Stack width={["90%", "50%", "50%"]} spacing={12} textAlign={['center', 'initial', 'initial']}>
             <Heading size='2xl' textColor="blue.500">
               Experiência Imersiva
@@ -154,7 +196,7 @@ export default function DoZeroAoAvancado() {
               />
             ))}
           </Stack>
-          <Button colorScheme='whatsapp' size='lg' borderRadius='full'  onClick={()=> goTo('https://pay.hotmart.com/S50456798G')  }>
+          <Button colorScheme='whatsapp' size='lg' borderRadius='full' onClick={() => goTo('https://pay.hotmart.com/S50456798G')}>
             Quero começar a aprender
           </Button>
         </Stack>
@@ -175,72 +217,87 @@ export default function DoZeroAoAvancado() {
         <Flex marginTop='2rem' shadow='lg' width={['80%', '75%', '55%']} height='5rem' justifyContent='center' alignItems='center' borderRadius='xl' border='2px solid' borderColor='blue.500'>
           <Text textAlign='center' fontSize={['m', 'xl', '2xl']} color='blue.500' fontWeight='bold'>Para todos que querem aprender FRANCÊS!</Text>
         </Flex>
+        <Stack width='90%' marginTop="3rem" align="center" spacing='12'>
+          <Heading marginTop='2rem' width={['90%', '80%', '80%']} textAlign='center' size='2xl' textColor='blue.500'>Depoimentos</Heading>
+          <Text width={['90%', '70%', '60%']} fontSize='xl' textAlign='center'>Ouça o que nossos alunos têm a dizer sobre o curso:</Text>
+        </Stack>
+        <Grid templateColumns={['repeat(1, 4fr)', 'repeat(2, 4fr)', 'repeat(4, 4fr)']} gap={12}>
+          <YoutubeVideo nome="Paulinha" videoLink="https://streamable.com/e/0olblh" />
+          <YoutubeVideo nome="Casal" videoLink="https://streamable.com/e/cm762m" />
+          <YoutubeVideo nome="Talita" videoLink="https://streamable.com/e/igpf14" />
+          <YoutubeVideo nome="Bárbara" videoLink="https://streamable.com/e/tgouoo" />
+        </Grid>
+        <Stack marginTop={12} width="30rem" height="20rem" align="center">
+          <iframe src="https://streamable.com/e/73bp7d" frameBorder="0" width="100%" height="100%" allowFullScreen></iframe>
+          <Text fontWeight="bold">Raylen</Text>
+        </Stack>
+
         <Flex>
-        <Stack
-              id='cta'
-              p="8"
-              width="22rem"
-              backgroundColor="blue.500"
-              borderRadius="xl"
-              spacing="8"
-              justify="center"
-              shadow="2xl"
-              align="center"
-              marginTop='4rem'            
-            >
-              <Heading textAlign='center' size="lg" textColor='white'>
-                Comece agora mesmo
-              </Heading>
-              <Divider w="100%" />
-              <Stack>
-                <Heading
-                  fontSize="sm"
-                  color="white.900"
-                  textDecoration="line-through"
-                >
-                  R$1497,00
-                </Heading>
-                <Stack direction="row" align="flex-end">
-                  <Heading fontSize="4xl" textColor='green.200'>R$ 997,00</Heading>
-                 
-                </Stack>
-              </Stack>
-                <Button
-                  w="100%"
-                  variant="solid"
-                  shadow="lg"
-                  onClick={()=> goTo('https://pay.hotmart.com/S50456798G')  }
-                >
-                  Quero agora!
-                </Button>
-              <Stack align="center" spacing="4" textAlign="center">
-              <Text color='white.500'>Bônus com a compra:</Text>
-                <Flex align="center">
-                  <ImPriceTag color="#EDF8FA" />
-                  <Text ml="4" color="white.50" fontWeight="bold">
-                    Valor Promocional
-                  </Text>
-                </Flex>
-                <Text color="white.50">E-book Saiba o que te impede de aprender francês</Text>
-                <Text textAlign="center" color="white.50" fontWeight="bold">
-                Aulas de conversação com foco na pronúncia
-                </Text>
-                <Text color="white.50">Lista de filmes franceses para treinar seu francês o</Text>
-                <Text color="white.50">
-                Playlist super legal e atual para você curtir e aprender francês
-                </Text>
-              </Stack>
-              <Divider w="100%" />
-              <Link
-                href="https://api.whatsapp.com/send?phone=555511933524845&text=Oi!%20Estou%20com%20d%C3%BAvidas%20sobre%20o%20curso%20iniciante%20em%20franc%C3%AAs.%20Voc%C3%AA%20pode%20me%20ajudar%3F"
-                isExternal
-                fontSize="12"
-                color="white.50"
-                fontWeight="normal"
+          <Stack
+            id='cta'
+            p="8"
+            width="22rem"
+            backgroundColor="blue.500"
+            borderRadius="xl"
+            spacing="8"
+            justify="center"
+            shadow="2xl"
+            align="center"
+            marginTop='4rem'
+          >
+            <Heading textAlign='center' size="lg" textColor='white'>
+              Comece agora mesmo
+            </Heading>
+            <Divider w="100%" />
+            <Stack>
+              <Heading
+                fontSize="sm"
+                color="white.900"
+                textDecoration="line-through"
               >
-                Entrar em contato
-              </Link>
+                R$1497,00
+              </Heading>
+              <Stack direction="row" align="flex-end">
+                <Heading fontSize="4xl" textColor='green.200'>R$ 997,00</Heading>
+
+              </Stack>
             </Stack>
+            <Button
+              w="100%"
+              variant="solid"
+              shadow="lg"
+              onClick={() => goTo('https://pay.hotmart.com/S50456798G')}
+            >
+              Quero agora!
+            </Button>
+            <Stack align="center" spacing="4" textAlign="center">
+              <Text color='white.500'>Bônus com a compra:</Text>
+              <Flex align="center">
+                <ImPriceTag color="#EDF8FA" />
+                <Text ml="4" color="white.50" fontWeight="bold">
+                  Valor Promocional
+                </Text>
+              </Flex>
+              <Text color="white.50">E-book Saiba o que te impede de aprender francês</Text>
+              <Text textAlign="center" color="white.50" fontWeight="bold">
+                Aulas de conversação com foco na pronúncia
+              </Text>
+              <Text color="white.50">Lista de filmes franceses para treinar seu francês o</Text>
+              <Text color="white.50">
+                Playlist super legal e atual para você curtir e aprender francês
+              </Text>
+            </Stack>
+            <Divider w="100%" />
+            <Link
+              href="https://api.whatsapp.com/send?phone=555511933524845&text=Oi!%20Estou%20com%20d%C3%BAvidas%20sobre%20o%20curso%20iniciante%20em%20franc%C3%AAs.%20Voc%C3%AA%20pode%20me%20ajudar%3F"
+              isExternal
+              fontSize="12"
+              color="white.50"
+              fontWeight="normal"
+            >
+              Entrar em contato
+            </Link>
+          </Stack>
         </Flex>
         <Stack
           spacing="4"
@@ -268,7 +325,7 @@ export default function DoZeroAoAvancado() {
             </Stack>
           </Button>
         </Stack>
-        <Footer/>
+        <Footer />
       </Flex>
     </>
   );

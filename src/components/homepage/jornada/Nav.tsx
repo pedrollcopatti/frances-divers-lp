@@ -1,5 +1,7 @@
-import { Button, Flex, Heading, Spacer, useMediaQuery } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Spacer, useMediaQuery } from "@chakra-ui/react";
+import Image from "next/image";
 import { Link } from "react-scroll";
+import logo from "../../../assets/letter_logo.svg"
 
 type NavProps = {
   idLink: string
@@ -21,9 +23,7 @@ export default function Nav({idLink}: NavProps) {
       mt="8"
       justify={isLargerThan1200 ? "normal" : "center"}
     >
-      <Heading size="md" color={isLargerThan1200 ? "orange.400" : "blue.400"}>
-        francês divers
-      </Heading>
+      <Box width={48} ><Image width="100%" height="100%" src={logo}/></Box>
       {isLargerThan1200 && (
         <>
           <Spacer />

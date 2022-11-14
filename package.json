@@ -21,7 +21,11 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
     "react-input-mask": "^2.0.4",
-    "react-scroll": "^1.8.7"
+    "react-player": "^2.11.0",
+    "react-responsive-carousel": "^3.2.23",
+    "react-scroll": "^1.8.7",
+    "react-timer-hook": "^3.0.5",
+    "react-youtube": "^10.0.0"
   },
   "devDependencies": {
     "@types/node": "18.7.11",
