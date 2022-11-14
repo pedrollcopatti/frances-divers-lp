@@ -1,6 +1,4 @@
 import {
-  AspectRatio,
-  Box,
   Button,
   Divider,
   Flex,
@@ -24,12 +22,12 @@ import experiencia from "../../assets/lp/experiencia.svg";
 import VerticalBulletItem from "../../components/lp/VerticalBulletItem";
 import { Footer } from "../../components/Footer";
 import { ImPriceTag, ImWhatsapp } from "react-icons/im";
-
-import ReactPlayer from "react-player";
-import { Carousel } from "react-responsive-carousel";
-import YouTube, { YouTubePlayer, YouTubeProps } from "react-youtube";
+import cristian from "../../assets/lp/cristian.png"
+import felipe from "../../assets/lp/felipe.jpg"
+import YouTube, { YouTubeProps } from "react-youtube";
 import YoutubeVideo from "../../components/lp/YoutubeVideo";
 import { useTimer } from 'react-timer-hook';
+import Depoiment from "../../components/lp/Depoiment";
 
 export default function DoZeroAoAvancado() {
   const time = new Date();
@@ -226,7 +224,10 @@ export default function DoZeroAoAvancado() {
           <iframe src="https://streamable.com/e/73bp7d" frameBorder="0" width="100%" height="100%" allowFullScreen></iframe>
           <Text fontWeight="bold">Raylen</Text>
         </Stack>
-
+            <Stack marginTop={12} direction={["column", "row", "row"]} width={["80%", "70%", "80%", "60%"]} spacing={12}>
+              <Depoiment nome="Felipe" path={felipe} text="Eu me chamo Felipe Fernandes, tenho 30 anos e resolvi estudar francês assim que entrei no curso de Filosofia, por questões profissionais mesmo. Mas só recentemente resolvi estudar com mais afinco, por conta de interesse cultural, e então fui fazer as aulas com o Fleury. Gostei bastante das aulas; são diversas e dinâmicas com bastante conversação, ponto que eu precisava investir mais. Apesar de ter sido online, e isso para mim ainda levanta algumas dificuldades, eu me sentia à vontade para pôr em prática e explorar o conhecimento que havia adquirido. Em pouco tempo consegui avançar mais do que nos anos anteriores e percebi que estava me tornando mais íntimo da língua. Pretendo ainda estudar mais a língua francesa, e com certeza será com a galera do Francês-Divers."/>
+              <Depoiment nome="Cristian" path={cristian} text="Eu sou Cristian e sou contador. Fui aluno do professor Fleury e foi  um prazer ter aula de francês com o professor. Ele é um excelente professor que tem muita paciência e carinho ao lecionar. Eu só tenho a agradecer por tudo  que aprendi com ele. Muito obrigado por tudo! "/>
+            </Stack>
         <Flex>
           <Stack
             id='cta'
