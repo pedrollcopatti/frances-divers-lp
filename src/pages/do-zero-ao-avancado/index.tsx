@@ -37,11 +37,11 @@ export default function DoZeroAoAvancado() {
 
   const HeadingMotion = motion(Heading);
   const [isLargerThan1000] = useMediaQuery('(min-width: 1000px)')
+
   const opts: YouTubeProps['opts'] = {
-    width: "1080",
-    height: "600",
+    width: "100%",
+    height: "100%",
     playerVars: {
-      // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
     },
   };
@@ -51,12 +51,7 @@ export default function DoZeroAoAvancado() {
     minutes,
     hours,
     days,
-    isRunning,
-    start,
-    pause,
-    resume,
-    restart,
-  } = useTimer({ expiryTimestamp: time, onExpire: () => console.warn('onExpire called') });
+  } = useTimer({ expiryTimestamp: time});
 
 
   return (
@@ -82,7 +77,7 @@ export default function DoZeroAoAvancado() {
         align="center"
         width="100%"
       >
-        <Flex height={16} position="fixed" backgroundColor="red.400" width="100%" align="center" justify="center">
+        <Flex zIndex={999} height={16} position="fixed" backgroundColor="red.400" width="100%" align="center" justify="center">
           <Text fontWeight="bold" fontSize={["small","medium","xl"]} color="white.500">Essa promoção acaba em: {days} dias, {hours} horas, {minutes} min, {seconds} seg</Text>
         </Flex>
         <Flex justify="center" width="100%" marginTop={12}>
@@ -102,11 +97,11 @@ export default function DoZeroAoAvancado() {
             <Button marginTop='2rem' colorScheme='whatsapp' size='lg' borderRadius='full' onClick={() => goTo('https://pay.hotmart.com/S50456798G')}>
               Quero começar a aprender
             </Button>
-            <Stack align="center" marginTop="5rem" height="650" spacing={8}>
-              <Heading>Veja o vídeo abaixo</Heading>
-              <YouTube title="Apresentação Francês-Divers" opts={opts} videoId="yE4UhbqZBQE"/>
-            </Stack>
           </Flex>
+          <Stack width={["100%", "100%" ,"100%"]} align="center" marginTop="5rem" height={["15rem", "35rem", "35rem"]} spacing={8}>
+              <Heading>Veja o vídeo abaixo</Heading>
+              <YouTube style={{width: isLargerThan1000 ? "50rem" : "20rem", height: isLargerThan1000 ? "30rem" : "10rem"}} title="Apresentação Francês-Divers" opts={opts} videoId="yE4UhbqZBQE"/>
+            </Stack>
           <Stack direction={isLargerThan1000 ? 'row' : 'column'} spacing={12} align='center' justify='center' width={['80%', '70%', '90%']}>
             {bulletProps.map((item) => (
               <BulletItem
@@ -227,7 +222,7 @@ export default function DoZeroAoAvancado() {
           <YoutubeVideo nome="Talita" videoLink="https://streamable.com/e/igpf14" />
           <YoutubeVideo nome="Bárbara" videoLink="https://streamable.com/e/tgouoo" />
         </Grid>
-        <Stack marginTop={12} width="30rem" height="20rem" align="center">
+        <Stack marginTop={12} width={["15rem", "20rem", "30rem"]} height={["10rem", "10rem", "20rem"]} align="center">
           <iframe src="https://streamable.com/e/73bp7d" frameBorder="0" width="100%" height="100%" allowFullScreen></iframe>
           <Text fontWeight="bold">Raylen</Text>
         </Stack>
