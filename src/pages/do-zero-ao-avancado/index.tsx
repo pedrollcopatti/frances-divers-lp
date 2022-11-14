@@ -51,7 +51,7 @@ export default function DoZeroAoAvancado() {
     minutes,
     hours,
     days,
-  } = useTimer({ expiryTimestamp: time});
+  } = useTimer({ expiryTimestamp: time });
 
 
   return (
@@ -77,16 +77,16 @@ export default function DoZeroAoAvancado() {
         align="center"
         width="100%"
       >
-        <Flex zIndex={999} height={16} position="fixed" backgroundColor="red.400" width="100%" align="center" justify="center">
-          <Text fontWeight="bold" fontSize={["small","medium","xl"]} color="white.500">Essa promoção acaba em: {days} dias, {hours} horas, {minutes} min, {seconds} seg</Text>
+        <Flex textAlign="center" zIndex={999} height={16} position="fixed" backgroundColor="red.400" width="100%" align="center" justify="center">
+          <Text fontWeight="bold" fontSize={["small", "medium", "xl"]} color="white.500">Essa promoção acaba em: {days} dias, {hours} horas, {minutes} min, {seconds} seg</Text>
         </Flex>
         <Flex justify="center" width="100%" marginTop={12}>
-        <Nav idLink={'cta'} />
+          <Nav idLink={'cta'} />
         </Flex>
         <Stack align="center" spacing="24" marginTop="7rem">
           <Flex direction="column" align="center" width="60%">
-  
-          <Heading textAlign='center' size={["xl", "2xl", "4xl"]}>DO ZERO AO</Heading>
+
+            <Heading textAlign='center' size={["xl", "2xl", "4xl"]}>DO ZERO AO</Heading>
             <Heading textAlign='center' size={["xl", "2xl", "4xl"]}>AVANÇADO</Heading>
             <Heading textAlign='center' size={["2xl", "2xl", "4xl"]} textColor='blue.500'>NO FRANCÊS</Heading>
             <Text marginTop={12} textAlign="center" fontSize="xl">
@@ -98,10 +98,10 @@ export default function DoZeroAoAvancado() {
               Quero começar a aprender
             </Button>
           </Flex>
-          <Stack width={["100%", "100%" ,"100%"]} align="center" marginTop="5rem" height={["15rem", "35rem", "35rem"]} spacing={8}>
-              <Heading>Veja o vídeo abaixo</Heading>
-              <YouTube style={{width: isLargerThan1000 ? "50rem" : "20rem", height: isLargerThan1000 ? "30rem" : "10rem"}} title="Apresentação Francês-Divers" opts={opts} videoId="yE4UhbqZBQE"/>
-            </Stack>
+          <Stack width={["100%", "100%", "100%"]} align="center" marginTop="5rem" height={["15rem", "35rem", "35rem"]} spacing={8}>
+            <Heading>Veja o vídeo abaixo</Heading>
+            <YouTube style={{ width: isLargerThan1000 ? "50rem" : "20rem", height: isLargerThan1000 ? "30rem" : "10rem" }} title="Apresentação Francês-Divers" opts={opts} videoId="yE4UhbqZBQE" />
+          </Stack>
           <Stack direction={isLargerThan1000 ? 'row' : 'column'} spacing={12} align='center' justify='center' width={['80%', '70%', '90%']}>
             {bulletProps.map((item) => (
               <BulletItem

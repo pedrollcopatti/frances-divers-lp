@@ -7,7 +7,7 @@ type NavProps = {
   idLink: string
 }
 
-export default function Nav({idLink}: NavProps) {
+export default function Nav({ idLink }: NavProps) {
   const [isLargerThan1200] = useMediaQuery("(min-width: 1200px)");
 
   function goTo(url: string) {
@@ -23,7 +23,7 @@ export default function Nav({idLink}: NavProps) {
       mt="8"
       justify={isLargerThan1200 ? "normal" : "center"}
     >
-      <Box width={48} ><Image width="100%" height="100%" src={logo}/></Box>
+      <Flex align="center" justify={isLargerThan1200 ? "start" : "center"} width={48} ><Image width="100%" height="100%" src={logo} /></Flex>
       {isLargerThan1200 && (
         <>
           <Spacer />
